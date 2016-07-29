@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Designer (Mock)</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly-additions.min.css">
+    <link rel="stylesheet" href="css/api-designer.css" />
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/js/patternfly.min.js"></script>
+    <script type="text/javascript" src="js/api-designer.js"></script>
+  </head>
+
+  <body class="cards-pf">
+    <nav class="navbar navbar-default navbar-pf navbar-fixed-top" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" style="padding-top: 4px; padding-bottom: 2px">
+          <img class="navbar-brand-logo" src="img/api-designer-logo.png" alt="API Designer">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              <span>Tom Brady</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li class="active"><a href="my-apis.html">My APIs</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="api-editor">
+      <div class="nav-pf-vertical hidden-icons-pf api-editor-nav-vertical">
+        <ul class="list-group">
+          <li class="list-group-item active">
+            <a href="api-details.html">
+              <span class="list-group-item-value">Overview</span>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="api-details-design.html">
+              <span class="list-group-item-value">Design</span>
+            </a>
+          </li>
+          <li class="list-group-item">
+            <a href="api-details-mappings.html">
+              <span class="list-group-item-value">Mappings</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="api-editor-body cards-pf">
+        <div class="container-fluid container-cards-pf container-pf-nav-pf-vertical container-pf-nav-pf-vertical-with-secondary hidden-icons-pf api-editor-overview">
+          <div class="row row-cards-pf">
+            
+            <!-- Overview Information Card -->
+            <div class="col-xs-12 col-sm-6">
+              <div class="card-pf api-editor-card">
+                <div class="card-pf-heading">
+                  <h1 class="card-pf-title">
+                    <span class="fa fa-plane api-deployed api-card-icon"></span> <span>Gateway Configuration API</span>
+                    <div class="dropdown pull-right dropdown-kebab-pf">
+                      <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="true">
+                        <span class="fa fa-ellipsis-v"></span>
+                      </button>
+                      <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight">
+                        <li><a href="#">Delete</a></li>
+                        <li><a href="#">Export</a></li>
+                        <li><a href="#">Generate Client</a></li>
+                        <li><a href="#">Bootstrap Impl</a></li>
+                      </ul>
+                    </div>
+                  </h1>
+                </div>
+                <div class="card-pf-body">
+                  <h3 style="margin-top: 30px; margin-bottom: 25px;">Used to directly configure the API Gateway (bypassing the management layer).</h3>
+                  <div style="margin-left: 15px">
+                    <div>
+                      <span class="fa fa-clock-o"></span>
+                      <span>Created on <em>2016-10-13</em></span>
+                    </div>
+                    <div>
+                      <span class="fa fa-user"></span>
+                      <span>Created by <em>tbrady</em></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <!-- # of Endpoints Card -->
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div style="height: 60px;" class="card-pf card-pf-accented card-pf-aggregate-status card-pf-aggregate-status-mini">
+                <h2 style="height: 43px;" class="card-pf-title">
+                  <span class="pficon pficon-service"></span> <span class="card-pf-aggregate-status-count">3</span> Endpoints
+                </h2>
+                <div style="height: 24px;" class="card-pf-body">
+                  <p class="card-pf-aggregate-status-notifications">
+                    <span class="card-pf-aggregate-status-notification">
+                      <a title="Add Endpoint..." href="api-details-design.html" class="add">
+                        <span class="pficon pficon-add-circle-o"></span>
+                      </a>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- # of Types Card -->
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div style="height: 60px;" class="card-pf card-pf-accented card-pf-aggregate-status card-pf-aggregate-status-mini">
+                <h2 style="height: 43px;" class="card-pf-title">
+                  <span class="fa fa-code"></span> <span class="card-pf-aggregate-status-count">6</span> Types
+                </h2>
+                <div style="height: 24px;" class="card-pf-body">
+                  <p class="card-pf-aggregate-status-notifications">
+                    <span class="card-pf-aggregate-status-notification">
+                      <a title="Add Type..." href="api-details-design.html" class="add">
+                        <span class="pficon pficon-add-circle-o"></span>
+                      </a>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+  
+            <!-- # of Mappings Card -->
+            <div class="col-xs-12 col-sm-6 col-md-3">
+              <div style="height: 60px;" class="card-pf card-pf-accented card-pf-aggregate-status card-pf-aggregate-status-mini">
+                <h2 style="height: 43px;" class="card-pf-title">
+                  <span class="fa fa-random"></span> <span class="card-pf-aggregate-status-count">0</span> Mappings
+                </h2>
+                <div style="height: 24px;" class="card-pf-body">
+                  <p class="card-pf-aggregate-status-notifications">
+                    <span class="card-pf-aggregate-status-notification">
+                      <a title="Add Mapping..." href="api-details-design.html" class="add">
+                        <span class="pficon pficon-add-circle-o"></span>
+                      </a>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row row-cards-pf">
+            <div class="col-xs-12 col-sm-6">
+              <div class="card-pf">
+                <div class="card-pf-heading">
+                  <h2 style="height: 18px;" class="card-pf-title">Top Collaborators</h2>
+                </div>
+                <div class="card-pf-body">
+                  <div class="progress-container progress-description-left">
+                    <div class="progress-description">tbrady</div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 57%;">
+                        <span><strong>57 of 100</strong> commits</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="progress-container progress-description-left">
+                    <div class="progress-description">jedelman</div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 27%;">
+                        <span><strong>27 of 100</strong> commits</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="progress-container progress-description-left">
+                    <div class="progress-description">rgronkowski</div>
+                    <div class="progress">
+                      <div class="progress-bar" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 12%;">
+                        <span><strong>12 of 100</strong> commits</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

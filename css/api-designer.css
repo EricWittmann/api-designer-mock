@@ -28,3 +28,25 @@
 .api-card:hover {
 	background-color: #ededed;
 }
+
+.api-editor {
+}
+
+.api-editor .api-editor-nav-vertical {
+	position: fixed;
+	top: 73px;
+}
+
+.api-editor .api-editor-body {
+	padding-left: 180px;
+	padding-top: 74px;
+}
+
+.api-editor .api-editor-body .container-cards-pf {
+	padding-top: 20px;
+	margin-top: 0px;
+}
+
+.api-editor .api-editor-overview .api-editor-card .card-pf-heading .card-pf-title {
+  font-size: 16px;
+}
