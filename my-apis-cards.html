@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Designer (Mock)</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly-additions.min.css">
+    <link rel="stylesheet" href="css/api-designer.css" />
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/js/patternfly.min.js"></script>
+    <script type="text/javascript" src="js/api-designer.js"></script>
+  </head>
+
+  <body class="">
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/" style="padding-top: 4px; padding-bottom: 2px">
+          <img class="navbar-brand-logo" src="img/api-designer-logo.png" alt="API Designer">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              <span>Tom Brady</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-primary">
+          <li class="active"><a href="my-apis.html">My APIs</a></li>
+          <li><a href="settings.html">Settings</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row toolbar-pf">
+        <div class="col-sm-12">
+          <form class="toolbar-pf-actions">
+            <div class="form-group toolbar-pf-filter">
+              <label class="sr-only" for="filter">Name</label>
+              <div class="input-group">
+                <div class="input-group-btn">
+                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    Name <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Name</a></li>
+                    <li><a href="#">Description</a></li>
+                  </ul>
+                </div>
+                <!-- /btn-group -->
+                <input type="text" class="form-control" id="filter" placeholder="Filter By Name...">
+              </div>
+              <!-- /input-group -->
+            </div>
+            <div class="form-group">
+              <button class="btn btn-link" type="button">
+                <span class="fa fa-sort-alpha-asc"></span>
+              </button>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-danger" type="button" disabled="disabled">Delete</button>
+              <div class="dropdown btn-group  dropdown-kebab-pf">
+                <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebab" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="true">
+                  <span class="fa fa-ellipsis-v"></span>
+                </button>
+                <ul class="dropdown-menu " aria-labelledby="dropdownKebab">
+                  <li><a href="#">Export</a></li>
+                  <li><a href="#">Generate Client</a></li>
+                  <li><a href="#">Bootstrap Impl</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="form-group">
+              <a class="btn btn-primary" href="new-api.html">New API</a>
+            </div>
+            <div class="form-group toolbar-pf-view-selector">
+              <ul class="list-inline">
+                <li><a href="my-apis.html"><i class="fa fa-th-list"></i></a></li>
+                <li class="active"><a href="#"><i class="fa fa-th"></i></a></li>
+              </ul>
+            </div>
+          </form>
+          <div class="row toolbar-pf-results">
+            <div class="col-sm-12">
+              <h5>3 Results</h5>
+              <p>Active filters:</p>
+              <ul class="list-inline">
+                <li>
+                  <span class="label label-info"> Name: nameofthething <a href="#"><span class="pficon pficon-close"></span></a></span>
+                </li>
+                <li>
+                  <span class="label label-info"> Other: something <a href="#"><span class="pficon pficon-close"></span></a></span>
+                </li>
+              </ul>
+              <p>
+                <a href="#">Clear All Filters</a>
+              </p>
+            </div>
+            <!-- /col -->
+          </div>
+          <!-- /row -->
+        </div>
+        <!-- /col -->
+      </div>
+      <div class="row cards-pf">
+  
+        <div class="container-fluid container-cards-pf">
+          <div class="row row-cards-pf">
+          
+            <!-- API #1 -->
+            <div class="col-xs-6 col-sm-4 col-md-4">
+              <div class="card-pf card-pf-accented card-pf-aggregate-status api-card">
+                <h2 class="api-card-title">
+                  <span class="fa fa-plane api-card-icon api-deployed"></span>
+                  <span><a href="api-details.html">Gateway Configuration API</a></span>
+                  <div class="dropdown pull-right dropdown-kebab-pf">
+                  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="fa fa-ellipsis-v"></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight2">
+                    <li><a href="#">Delete</a></li>
+                    <li><a href="#">Export</a></li>
+                    <li><a href="#">Generate Client</a></li>
+                    <li><a href="#">Bootstrap Impl</a></li>
+                  </ul>
+                </div>
+                </h2>
+                <div class="card-pf-body">
+                  <hr/>
+                  <p class="">
+                    Used to directly configure the API Gateway (bypassing the management layer).
+                  </p>
+                  <p class="card-pf-aggregate-status-notifications">
+                    <span class="card-pf-aggregate-status-notification">
+                      <a href="api-details.html">
+                        <span class="pficon pficon-service"></span>
+                        <span>3</span>
+                      </a>
+                    </span>
+                    <span class="card-pf-aggregate-status-notification">
+                      <a href="api-details.html">
+                        <span class="fa fa-code"></span>
+                        <span>4</span>
+                      </a>
+                    </span>
+                    <span class="card-pf-aggregate-status-notification">
+                      <a href="api-details.html">
+                        <span class="fa fa-random"></span>
+                        <span>0</span>
+                      </a>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- API #2 -->
+            <div class="col-xs-6 col-sm-4 col-md-4">
+              <div class="card-pf card-pf-accented card-pf-aggregate-status api-card">
+                <h2 class="api-card-title">
+                  <span class="fa fa-puzzle-piece api-card-icon"></span>
+                  <span><a href="api-details.html">Manager Configuration API</a></span>
+                  <div class="dropdown pull-right dropdown-kebab-pf">
+                  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="fa fa-ellipsis-v"></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight2">
+                    <li><a href="#">Delete</a></li>
+                    <li><a href="#">Export</a></li>
+                    <li><a href="#">Generate Client</a></li>
+                    <li><a href="#">Bootstrap Impl</a></li>
+                  </ul>
+                </div>
+                </h2>
+                <div class="card-pf-body">
+                  <hr/>
+                  <p class="">
+                    Used to manage lifecycle of, and configure policies on, managed APIs.
+                  </p>
+                  <p class="card-pf-aggregate-status-notifications">
+                    <span class="card-pf-aggregate-status-notification">
+                      <a href="api-details.html">
+                        <span class="pficon pficon-service"></span>
+                        <span>24</span>
+                      </a>
+                    </span>
+                    <span class="card-pf-aggregate-status-notification">
+                      <a href="api-details.html">
+                        <span class="fa fa-code"></span>
+                        <span>32</span>
+                      </a>
+                    </span>
+                    <span class="card-pf-aggregate-status-notification">
+                      <a href="api-details.html">
+                        <span class="fa fa-random"></span>
+                        <span>0</span>
+                      </a>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- API #3 -->
+            <div class="col-xs-6 col-sm-4 col-md-4">
+              <div class="card-pf card-pf-accented card-pf-aggregate-status api-card">
+                <h2 class="api-card-title">
+                  <span class="fa fa-filter api-card-icon"></span>
+                  <span><a href="api-details.html">Rate Limiting API</a></span>
+                  <div class="dropdown pull-right dropdown-kebab-pf">
+                  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="fa fa-ellipsis-v"></span>
+                  </button>
+                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight2">
+                    <li><a href="#">Delete</a></li>
+                    <li><a href="#">Export</a></li>
+                    <li><a href="#">Generate Client</a></li>
+                    <li><a href="#">Bootstrap Impl</a></li>
+                  </ul>
+                </div>
+                </h2>
+                <div class="card-pf-body">
+                  <hr/>
+                  <p class="">
+                    An API that allows consumers to manage large numbers of individual rate limits.
+                  </p>
+                  <p class="card-pf-aggregate-status-notifications">
+                    <span class="card-pf-aggregate-status-notification">
+                      <a href="api-details.html">
+                        <span class="pficon pficon-service"></span>
+                        <span>2</span>
+                      </a>
+                    </span>
+                    <span class="card-pf-aggregate-status-notification">
+                      <a href="api-details.html">
+                        <span class="fa fa-code"></span>
+                        <span>8</span>
+                      </a>
+                    </span>
+                    <span class="card-pf-aggregate-status-notification">
+                      <a href="api-details.html">
+                        <span class="fa fa-random"></span>
+                        <span>2</span>
+                      </a>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>

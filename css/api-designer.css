@@ -1,10 +1,30 @@
 
 .navbar .navbar-brand .navbar-brand-logo {
-	font-size: 12px;
-	font-weight: bold;
-	line-height: 10px;
-	color: white;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 10px;
+  color: white;
 }
 .navbar .navbar-brand .navbar-brand-logo:hover {
-	color: gold;
+  color: gold;
+}
+
+.api-card-icon {
+  border: 2px solid #39a5dc;
+  border-radius: 50%;
+  padding: 5px;
+  margin-right: 10px;
+}
+
+.list-view-pf-left .fa.list-view-pf-icon-sm.api-deployed, .api-card-icon.api-deployed {
+  border: 2px solid rgb(85, 202, 112);
+}
+
+.api-card .api-card-title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.api-card:hover {
+	background-color: #ededed;
 }
