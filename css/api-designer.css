@@ -83,3 +83,65 @@
   font-size: 11px;
   padding-left: 20px;
 }
+
+.api-endpoint {
+	margin-bottom: 5px;
+}
+
+.api-endpoint .api-endpoint-heading {
+  border: 1px solid transparent;
+  border-top: 1px solid rgb(57, 165, 220);
+  background-color: #f3f3fa;
+}
+.api-endpoint .api-endpoint-heading h2 {
+  padding: 3px;
+  font-size: 18px;
+  margin: 5px;
+}
+.api-endpoint .api-endpoint-heading h2 a {
+  color: black;
+  font-weight: 300;
+}
+.api-endpoint .api-endpoint-heading h2 a span.endpoint-param {
+	font-weight: 400;
+	color: rgb(57, 165, 220);
+}
+.api-endpoint .api-endpoint-heading:hover {
+	background-color: rgb(57, 165, 220);
+	color: white;
+}
+.api-endpoint .api-endpoint-heading:hover h2 a {
+  color: white;
+}
+.api-endpoint .api-endpoint-heading:hover h2 a span.endpoint-param {
+  color: white;
+}
+
+.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd {
+	float: right;
+	font-weight: 400;
+	border: 1px solid rgb(0, 101, 156);
+	background-color: white;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-radius: 3px;
+}
+
+.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd span {
+	color: #ccc;
+}
+.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd span.enabled {
+  color: black;
+}
+.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd .api-endpoint-heading-gppd-get.enabled {
+	color: green;
+}
+.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd .api-endpoint-heading-gppd-put.enabled {
+  color: orange;
+}
+.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd .api-endpoint-heading-gppd-post.enabled {
+  color: orange;
+}
+.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd .api-endpoint-heading-gppd-del.enabled {
+  color: red;
+}
