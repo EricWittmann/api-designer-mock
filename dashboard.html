@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Designer (Mock)</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly-additions.min.css">
+    <link rel="stylesheet" href="css/api-designer.css" />
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/js/patternfly.min.js"></script>
+    <script type="text/javascript" src="js/api-designer.js"></script>
+  </head>
+
+  <body class="cards-pf">
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html" style="padding-top: 4px; padding-bottom: 2px">
+          <img class="navbar-brand-logo" src="img/api-designer-logo.png" alt="API Designer">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              <span>Tom Brady</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul></li>
+        </ul>
+      </div>
+    </nav>
+
+  <div class="container-fluid">
+    <div class="row" style="min-height: 35px"></div>
+    <div class="row row-cards-pf">
+
+      <div class="col-xs-12 col-sm-6">
+        <div class="card-pf">
+          <div class="card-pf-heading">
+            <h2 class="card-pf-title">
+              <span class="fa fa-fw fa-comment"></span>
+              <span>Welcome to the <strong>API Designer</strong> Dashboard!</span>
+            </h2>
+          </div>
+          <div class="card-pf-body">
+            <p>
+              Hey <strong>Tom</strong>, thanks for logging into the <strong>API Designer</strong> studio.  Hopefully
+              you're finding it easy to use this tool to design and collaborate on new (and existing) APIs.
+            </p>
+            <div>
+              <ul>
+                <li><a href="#">A link to the project goes here</a></li>
+                <li><a href="#">Maybe a link to documentation?</a></li>
+                <li><a href="#">Getting Started with the API Studio!</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-3">
+        <div style="height: 90px;" class="card-pf card-pf-accented card-pf-aggregate-status">
+          <h2 style="height: 18px;" class="card-pf-title">
+            <span class="fa fa-bolt"></span><span class="card-pf-aggregate-status-count">3</span> Total APIs
+          </h2>
+          <div style="height: 50px;" class="card-pf-body">
+            <p class="card-pf-aggregate-status-notifications">
+              <span class="card-pf-aggregate-status-notification"><a data-original-title="Create API" href="#" class="add"
+                data-toggle="tooltip" data-placement="top" title="Create API"><span class="pficon pficon-add-circle-o"></span></a></span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="row row-cards-pf">
+
+      <div class="col-xs-12 col-sm-6 col-md-6">
+        <div style="" class="card-pf">
+          <div class="card-pf-heading">
+            <h2 style="" class="card-pf-title">Your Recent APIs</h2>
+          </div>
+          <div style="" class="card-pf-body api-recent-apis">
+            <div class="api-item">
+              <a href="api-details.html">
+                <span class="fa fa-fw fa-plane"></span><span>Gateway Configuration API</span>
+              </a>
+              <p>
+                Used to directly configure the API Gateway (bypassing the management layer).
+              </p>
+            </div>
+            <div class="api-item">
+              <a href="api-details.html">
+                <span class="fa fa-fw fa-puzzle-piece"></span><span>Manager Configuration API</span>
+              </a>
+              <p>
+                Used to manage lifecycle of, and configure policies on, managed APIs.
+              </p>
+            </div>
+          </div>
+          <div style="" class="card-pf-footer">
+            <p>
+              <a href="my-apis.html" class="card-pf-link-with-icon">
+                <span class="fa fa-list"></span>List All
+              </a>
+              <span></span>
+              <a href="new-api.html" class="card-pf-link-with-icon pull-right">
+                <span class="pficon pficon-add-circle-o"></span>Create an API
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6">
+        <div style="" class="card-pf">
+          <div class="card-pf-heading">
+            <h2 style="height: 18px;" class="card-pf-title">Other Interesting Data</h2>
+          </div>
+          <div style="" class="card-pf-body">
+            <div class="progress-container progress-description-left progress-label-right">
+              <div class="progress-description">Thing #1</div>
+              <div class="progress">
+                <div data-original-title="25% Used" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0"
+                  aria-valuemax="100" style="width: 25%;" data-toggle="tooltip" title="">
+                  <span><strong>115 of 460</strong></span>
+                </div>
+                <div data-original-title="75% Available" class="progress-bar progress-bar-remaining" role="progressbar" aria-valuenow="75"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 75%;" data-toggle="tooltip" title="">
+                  <span class="sr-only">75% Available</span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-container progress-description-left progress-label-right">
+              <div class="progress-description">Thing #2</div>
+              <div class="progress">
+                <div data-original-title="8 GB Used" class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+                  aria-valuemax="100" style="width: 50%;" data-toggle="tooltip" title="">
+                  <span><strong>8 of 16</strong></span>
+                </div>
+                <div data-original-title="8 GB Available" class="progress-bar progress-bar-remaining" role="progressbar" aria-valuenow="50"
+                  aria-valuemin="0" aria-valuemax="100" style="width: 50%;" data-toggle="tooltip" title="">
+                  <span class="sr-only">50% Available</span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-container progress-description-left progress-label-right">
+              <div class="progress-description">Another Thing</div>
+              <div class="progress">
+                <div data-original-title="62.5% Used" class="progress-bar" role="progressbar" aria-valuenow="62.5" aria-valuemin="0"
+                  aria-valuemax="100" style="width: 62.5%;" data-toggle="tooltip" title="">
+                  <span><strong>5 of 8</strong> Total</span>
+                </div>
+                <div data-original-title="37.5% Available" class="progress-bar progress-bar-remaining" role="progressbar"
+                  aria-valuenow="37.5" aria-valuemin="0" aria-valuemax="100" style="width: 37.5%;" data-toggle="tooltip" title="">
+                  <span class="sr-only">37.5% Available</span>
+                </div>
+              </div>
+            </div>
+            <div class="progress-container progress-description-left progress-label-right">
+              <div class="progress-description">Last Thing</div>
+              <div class="progress">
+                <div data-original-title="62.5% Used" class="progress-bar" role="progressbar" aria-valuenow="62.5" aria-valuemin="0"
+                  aria-valuemax="100" style="width: 62.5%;" data-toggle="tooltip" title="">
+                  <span><strong>10 of 16</strong> Total</span>
+                </div>
+                <div data-original-title="37.5% Available" class="progress-bar progress-bar-remaining" role="progressbar"
+                  aria-valuenow="37.5" aria-valuemin="0" aria-valuemax="100" style="width: 37.5%;" data-toggle="tooltip" title="">
+                  <span class="sr-only">37.5% Available</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
