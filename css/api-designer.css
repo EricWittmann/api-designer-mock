@@ -40,6 +40,23 @@
 .api-editor .api-editor-body {
 }
 
+.api-editor .api-editor-body .CodeMirror {
+	height: auto;
+	position: fixed;
+	top: 120px;
+	bottom: 0px;
+	left: 20px;
+	right: 50%;
+}
+.api-editor .api-editor-body .api-editor-docs {
+	position: fixed;
+	top: 120px;
+	bottom: 0px;
+	left: 51%;
+	right: 0px;
+}
+
+
 .api-editor .api-editor-body .container-cards-pf {
 	padding-top: 20px;
 	margin-top: 0px;
