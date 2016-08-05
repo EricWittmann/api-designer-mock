@@ -72,172 +72,244 @@
           <ul class="nav nav-tabs nav-tabs-pf">
             <li><a href="api-details.html">Overview</a></li>
             <li class="active"><a href="api-details-design.html">Design</a></li>
-            <li><a href="api-details-mappings.html">Mappings</a></li>
+            <li><a href="api-details-source.html">Source</a></li>
           </ul>
         </div>
       </div>
 
-      <div class="api-editor-body">
-        <div class="container-fluid container-cards-pf api-editor-overview">
-          <div class="row row-cards-pf">
+      <div class="api-editor-body container-fluid">
+        <div class="row-fluid">
+          <!-- Left Column -->
+          <div class="col-xs-12 col-sm-7 col-md-7">
+            <div class="container-fluid container-cards-pf">
+              <div class="row row-cards-pf">
+              
+                <!-- Overview Information Card -->
+                <div class="">
+                  <div class="card-pf api-editor-card">
+                    <div class="card-pf-heading">
+                      <h1 class="card-pf-title">
+                        <span class="fa fa-fw fa-plane"></span> <span>Gateway Configuration API</span>
+                      </h1>
+                    </div>
+                    <div class="card-pf-body" style="padding-bottom: 0px">
+                      <h3 style="margin-top: 10px; margin-bottom: 10px;">Used to directly configure the API Gateway (bypassing the management layer).</h3>
+                    </div>
+                    <div class="card-pf-footer" style="padding: 10px 20px 2px 10px">
+                      <p style="padding: 0px">
+                        <span>&nbsp;</span>
+                        <span></span> <a href="#" class="card-pf-link-with-icon pull-right"> <span
+                          class="fa fa-fw fa-chevron-down"></span><span>Expand</span>
+                        </a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-            <!-- Overview Information Card -->
-            <div class="col-xs-12 col-sm-7 col-md-7">
-              <div class="card-pf api-editor-card">
-                <div class="card-pf-heading">
-                  <h1 class="card-pf-title">
-                    <span class="fa fa-fw fa-plane"></span> <span>Gateway Configuration API</span>
-                  </h1>
-                </div>
-                <div class="card-pf-body" style="padding-bottom: 0px">
-                  <h3 style="margin-top: 10px; margin-bottom: 10px;">Used to directly configure the API Gateway (bypassing the management layer).</h3>
-                </div>
-                <div class="card-pf-footer" style="padding: 10px 20px 2px 10px">
-                  <p style="padding: 0px">
-                    <span>&nbsp;</span>
-                    <span></span> <a href="#" class="card-pf-link-with-icon pull-right"> <span
-                      class="fa fa-fw fa-chevron-down"></span><span>Expand</span>
-                    </a>
-                  </p>
+                <!-- Endpoint List Card -->
+                <div class="">
+                  <div class="card-pf api-editor-card">
+                    <div class="card-pf-heading" style="padding: 10px; padding-bottom: 5px;">
+                      <table style="display:inline-block;" class="api-search-box input-search">
+                        <tbody>
+                          <tr>
+                            <td><span class="fa fa-fw fa-bolt" style="font-size: 16px; width: 50px"></span></td>
+                            <td width="99%"><input style="padding-left: 3px; padding-top: 2px; padding-bottom: 2px; width: 220px; border: 1px solid rgb(183,183,183); font-size: 13px; line-height: 20px" id="type-filter" 
+                              value="" placeholder="Filter by endpoint..." type="text"></td>
+                            <td width="1%">
+                              <button id="endpoint-filter-btn" class="btn btn-default" style="border-left: 0px;">
+                                <i class="fa fa-fw fa-search"></i>
+                              </button>
+                            </td>
+                            <td>
+                              <span style="margin-left: 10px; white-space: nowrap;">Showing <strong>all 6</strong> endpoints</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button style="display: inline" class="btn btn-primary pull-right" type="button"><span class="fa fa-fw fa-plus"></span>Add Endpoint</button>
+                    </div>
+                    <div class="card-pf-body" style="padding-bottom: 20px;">
+                    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">/apis</a>
+                            <span class="api-endpoint-heading-gppd">
+                              <span class="api-endpoint-heading-gppd-get">G</span>
+                              <span class="api-endpoint-heading-gppd-put enabled">P</span>
+                              <span class="api-endpoint-heading-gppd-post">P</span>
+                              <span class="api-endpoint-heading-gppd-del">D</span>
+                            </span>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">/apis/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{apiId}</span>/<span class="endpoint-param">{version}</span></a>
+                            <span class="api-endpoint-heading-gppd">
+                              <span class="api-endpoint-heading-gppd-get enabled">G</span>
+                              <span class="api-endpoint-heading-gppd-put">P</span>
+                              <span class="api-endpoint-heading-gppd-post">P</span>
+                              <span class="api-endpoint-heading-gppd-del enabled">D</span>
+                            </span>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">/apis/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{apiId}</span>/<span class="endpoint-param">{version}</span>/endpoint</a>
+                            <span class="api-endpoint-heading-gppd">
+                              <span class="api-endpoint-heading-gppd-get enabled">G</span>
+                              <span class="api-endpoint-heading-gppd-put">P</span>
+                              <span class="api-endpoint-heading-gppd-post">P</span>
+                              <span class="api-endpoint-heading-gppd-del">D</span>
+                            </span>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">/clients</a>
+                            <span class="api-endpoint-heading-gppd">
+                              <span class="api-endpoint-heading-gppd-get">G</span>
+                              <span class="api-endpoint-heading-gppd-put enabled">P</span>
+                              <span class="api-endpoint-heading-gppd-post">P</span>
+                              <span class="api-endpoint-heading-gppd-del">D</span>
+                            </span>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">/clients/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{clientId}</span>/<span class="endpoint-param">{version}</span></a>
+                            <span class="api-endpoint-heading-gppd">
+                              <span class="api-endpoint-heading-gppd-get enabled">G</span>
+                              <span class="api-endpoint-heading-gppd-put">P</span>
+                              <span class="api-endpoint-heading-gppd-post">P</span>
+                              <span class="api-endpoint-heading-gppd-del enabled">D</span>
+                            </span>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">/system/status</a>
+                            <span class="api-endpoint-heading-gppd">
+                              <span class="api-endpoint-heading-gppd-get enabled">G</span>
+                              <span class="api-endpoint-heading-gppd-put">P</span>
+                              <span class="api-endpoint-heading-gppd-post">P</span>
+                              <span class="api-endpoint-heading-gppd-del">D</span>
+                            </span>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            
-            <!-- Endpoint List Card -->
-            <div class="col-xs-12 col-sm-7 col-md-7">
-              <div class="card-pf api-editor-card">
-                <div class="card-pf-heading" style="padding: 10px; padding-bottom: 5px;">
-                  <table style="display:inline-block;" filter="orgs-filter" class="api-search-box input-search ng-isolate-scope"
-                    data-field="contractFilter">
-                    <tbody>
-                      <tr>
-                        <td width="99%"><input style="padding-left: 3px; padding-top: 2px; padding-bottom: 2px; width: 220px; border: 1px solid rgb(183,183,183); font-size: 13px; line-height: 20px" class="ng-pristine ng-valid ng-touched" id="endpoint-filter" 
-                          ng-change="doSearch()" value="" placeholder="Filter by endpoint..." type="text"></td>
-                        <td width="1%">
-                          <button id="endpoint-filter-btn" class="btn btn-default" style="border-left: 0px;">
-                            <i class="fa fa-fw fa-search"></i>
-                          </button>
-                        </td>
-                        <td>
-                          <span style="margin-left: 10px; white-space: nowrap;">Showing <strong>all 13</strong> endpoints</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  <button style="display: inline" class="btn btn-primary pull-right" type="button"><span class="fa fa-fw fa-plus"></span>Add Endpoint</button>
-                </div>
-                <div class="card-pf-body" style="padding-bottom: 20px;">
-                
-                  <div class="api-endpoint">
-                    <div class="api-endpoint-heading">
-                      <h2>
-                        <a href="#">/apis</a>
-                        <span class="api-endpoint-heading-gppd">
-                          <span class="api-endpoint-heading-gppd-get">G</span>
-                          <span class="api-endpoint-heading-gppd-put enabled">P</span>
-                          <span class="api-endpoint-heading-gppd-post">P</span>
-                          <span class="api-endpoint-heading-gppd-del">D</span>
-                        </span>
-                      </h2>
-                    </div>
-                    <div class="api-endpoint-detail"></div>
-                  </div>
-
-                  <div class="api-endpoint">
-                    <div class="api-endpoint-heading">
-                      <h2>
-                        <a href="#">/apis/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{apiId}</span>/<span class="endpoint-param">{version}</span></a>
-                        <span class="api-endpoint-heading-gppd">
-                          <span class="api-endpoint-heading-gppd-get enabled">G</span>
-                          <span class="api-endpoint-heading-gppd-put">P</span>
-                          <span class="api-endpoint-heading-gppd-post">P</span>
-                          <span class="api-endpoint-heading-gppd-del enabled">D</span>
-                        </span>
-                      </h2>
-                    </div>
-                    <div class="api-endpoint-detail"></div>
-                  </div>
-
-                  <div class="api-endpoint">
-                    <div class="api-endpoint-heading">
-                      <h2>
-                        <a href="#">/apis/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{apiId}</span>/<span class="endpoint-param">{version}</span>/endpoint</a>
-                        <span class="api-endpoint-heading-gppd">
-                          <span class="api-endpoint-heading-gppd-get enabled">G</span>
-                          <span class="api-endpoint-heading-gppd-put">P</span>
-                          <span class="api-endpoint-heading-gppd-post">P</span>
-                          <span class="api-endpoint-heading-gppd-del">D</span>
-                        </span>
-                      </h2>
-                    </div>
-                    <div class="api-endpoint-detail"></div>
-                  </div>
-
-                  <div class="api-endpoint">
-                    <div class="api-endpoint-heading">
-                      <h2>
-                        <a href="#">/clients</a>
-                        <span class="api-endpoint-heading-gppd">
-                          <span class="api-endpoint-heading-gppd-get">G</span>
-                          <span class="api-endpoint-heading-gppd-put enabled">P</span>
-                          <span class="api-endpoint-heading-gppd-post">P</span>
-                          <span class="api-endpoint-heading-gppd-del">D</span>
-                        </span>
-                      </h2>
-                    </div>
-                    <div class="api-endpoint-detail"></div>
-                  </div>
-
-                  <div class="api-endpoint">
-                    <div class="api-endpoint-heading">
-                      <h2>
-                        <a href="#">/clients/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{clientId}</span>/<span class="endpoint-param">{version}</span></a>
-                        <span class="api-endpoint-heading-gppd">
-                          <span class="api-endpoint-heading-gppd-get enabled">G</span>
-                          <span class="api-endpoint-heading-gppd-put">P</span>
-                          <span class="api-endpoint-heading-gppd-post">P</span>
-                          <span class="api-endpoint-heading-gppd-del enabled">D</span>
-                        </span>
-                      </h2>
-                    </div>
-                    <div class="api-endpoint-detail"></div>
-                  </div>
-
-                  <div class="api-endpoint">
-                    <div class="api-endpoint-heading">
-                      <h2>
-                        <a href="#">/system/status</a>
-                        <span class="api-endpoint-heading-gppd">
-                          <span class="api-endpoint-heading-gppd-get enabled">G</span>
-                          <span class="api-endpoint-heading-gppd-put">P</span>
-                          <span class="api-endpoint-heading-gppd-post">P</span>
-                          <span class="api-endpoint-heading-gppd-del">D</span>
-                        </span>
-                      </h2>
-                    </div>
-                    <div class="api-endpoint-detail"></div>
-                  </div>
-
-                </div>
-<!--                 <div class="card-pf-footer" style="padding: 10px 20px 2px 10px"> -->
-<!--                   <p style="padding: 0px"> -->
-<!--                     <span>&nbsp;</span> -->
-<!--                     <span></span> <a href="#" class="card-pf-link-with-icon pull-right"> <span -->
-<!--                       class="fa fa-fw fa-chevron-down"></span><span>Expand</span> -->
-<!--                     </a> -->
-<!--                   </p> -->
-<!--                 </div> -->
-              </div>
-            </div>
-            
-            
           </div>
-          
-          <div class="row row-cards-pf">
+          <!-- Right Column -->
+          <div class="col-xs-12 col-sm-5 col-md-5">
+            <div class="container-fluid container-cards-pf">
+              <div class="row row-cards-pf">
+
+                <!-- Type List Card -->
+                <div class="">
+                  <div class="card-pf api-editor-card">
+                    <div class="card-pf-heading" style="padding: 10px; padding-bottom: 5px;">
+                      <table style="display:inline-block;" class="api-search-box input-search ng-isolate-scope">
+                        <tbody>
+                          <tr>
+                            <td><span class="fa fa-fw fa-code" style="font-size: 16px; width: 50px"></span></td>
+                            <td width="99%"><input style="padding-left: 3px; padding-top: 2px; padding-bottom: 2px; width: 220px; border: 1px solid rgb(183,183,183); font-size: 13px; line-height: 20px" id="endpoint-filter" 
+                              value="" placeholder="Filter by type..." type="text"></td>
+                            <td width="1%">
+                              <button id="endpoint-filter-btn" class="btn btn-default" style="border-left: 0px;">
+                                <i class="fa fa-fw fa-search"></i>
+                              </button>
+                            </td>
+                            <td>
+                              <span style="margin-left: 10px; white-space: nowrap;">Showing <strong>all 5</strong> types</span>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <button style="display: inline" class="btn btn-primary pull-right" type="button"><span class="fa fa-fw fa-plus"></span>Add Type</button>
+                    </div>
+                    <div class="card-pf-body" style="padding-bottom: 20px;">
+                    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">{Api}</a>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">{Client}</a>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">{NotAuthorizedError}</a>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">{GatewayApiError}</a>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+    
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#">{SystemStatus}</a>
+                          </h2>
+                        </div>
+                        <div class="api-endpoint-detail"></div>
+                      </div>
+    
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            </div>
           </div>
         </div>
-
-      
       </div>
     </div>
   </body>
