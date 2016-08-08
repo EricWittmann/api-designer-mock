@@ -66,6 +66,10 @@
   font-size: 16px;
 }
 
+.api-editor .api-editor-card .card-pf-link-with-icon .fa {
+	font-size: 15px;
+}
+
 .api-breadcrumbs {
 	background: white;
 	border-bottom: 1px solid #ccc;
@@ -121,7 +125,7 @@
 }
 .api-endpoint .api-endpoint-heading h2 a span.endpoint-param {
 	font-weight: 400;
-	color: rgb(57, 165, 220);
+	color: #ff6a7c;
 }
 .api-endpoint .api-endpoint-heading:hover {
 	background-color: rgb(57, 165, 220);
@@ -161,4 +165,76 @@
 }
 .api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd .api-endpoint-heading-gppd-del.enabled {
   color: red;
+}
+
+.api-endpoint .api-endpoint-detail {
+	padding: 5px;
+}
+
+.api-endpoint .api-endpoint-detail .nav-tabs {
+	font-size: 12px;
+	margin-bottom: 0px;
+}
+.api-endpoint .api-endpoint-detail .nav-tabs li a {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-get a {
+  color: green;
+}
+#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-get a::before {
+  background: green !important;
+}
+#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-put a {
+  color: orange;
+}
+#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-put a::before {
+  background: orange !important;
+}
+#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-post a {
+  color: orange;
+}
+#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-post a::before {
+  background: orange !important;
+}
+#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-del a {
+  color: red;
+}
+#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-del a::before {
+  background: red !important;
+}
+
+#api-editor .api-endpoint .api-endpoint-detail h1 {
+	font-size: 14px;
+	font-weight: bold;
+	color: #666;
+	margin-top: 15px;
+	margin-bottom: 0px;
+}
+#api-editor .api-endpoint .api-endpoint-detail hr {
+	margin-top: 8px;
+	margin-bottom: 8px;
+}
+#api-editor .api-endpoint .api-endpoint-detail h2 {
+	font-size: 15px;
+	text-decoration: underline;
+}
+#api-editor .api-endpoint-parameters td.parameter {
+	color: #ff6a7c;
+	width: 1%;
+	white-space: nowrap;
+}
+#api-editor .api-endpoint-parameters td.icons {
+	color: #666;
+  width: 1%;
+  white-space: nowrap;
+}
+#api-editor .api-endpoint-parameters td.icons i:hover {
+	cursor: pointer;
+	color: #321;
+}
+#api-editor .api-endpoint-parameters td.description {
+}
+#api-editor .api-endpoint-parameters td.type {
 }

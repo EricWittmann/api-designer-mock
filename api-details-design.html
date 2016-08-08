@@ -9,9 +9,9 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly-additions.min.css">
     <link rel="stylesheet" href="css/api-designer.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly-additions.css">
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="api-editor">
+    <div class="api-editor" id="api-editor">
 
       <div class="container-fluid">
         <div class="row-fluid">
@@ -134,7 +134,7 @@
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">/apis</a>
+                            <a href="#apiendpoint-1" data-toggle="collapse" onclick="blur()">/apis</a>
                             <span class="api-endpoint-heading-gppd">
                               <span class="api-endpoint-heading-gppd-get">G</span>
                               <span class="api-endpoint-heading-gppd-put enabled">P</span>
@@ -143,13 +143,73 @@
                             </span>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div id="apiendpoint-1" class="api-endpoint-detail collapse">
+                          <ul class="nav nav-tabs nav-tabs-pf">
+                            <li class="tab-get disabled"><a href="#" onclick="blur()">GET</a></li>
+                            <li class="tab-put active"><a href="#" onclick="blur()">PUT</a></li>
+                            <li class="tab-post disabled"><a href="#" onclick="blur()">POST</a></li>
+                            <li class="tab-del disabled"><a href="#" onclick="blur()">DELETE</a></li>
+                          </ul>
+                          <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="apiendpoint-1-get">
+                              Some information about the GET endpoint goes here.
+                            </div>
+                            <div role="tabpanel" class="tab-pane active" id="apiendpoint-1-put">
+                              <h1>Publish an API</h1>
+                              <p class="description">
+                                Used to publish a new (or updated) API to the Gateway.
+                              </p>
+                              <hr/>
+                              <h2>Request Body</h2>
+                              <table class="table table-striped">
+                                <tr>
+                                  <th>Description</th>
+                                  <th>Content-Type</th>
+                                  <th>Type</th>
+                                </tr>
+                                <tr>
+                                  <td class="description">A new/updated API to publish.</td>
+                                  <td class="content-type">application/json</td>
+                                  <td class="type"><a href="#">NewApi</a></td>
+                                </tr>
+                              </table>
+                              <h2>Response (Success)</h2>
+                              <p>A successful call will result in a <strong>201 Created</strong> HTTP response.</p>
+                              <h2>Response (Failure)</h2>
+                              <table class="table table-striped api-endpoint-parameters">
+                                <tr>
+                                  <th>Status Code</th>
+                                  <th>Reason</th>
+                                  <th>Type</th>
+                                </tr>
+                                <tr>
+                                  <td class="code">400</td>
+                                  <td class="description">Unexpected error when attempting to publish the API.</td>
+                                  <td class="type"><a href="#">PublishingException</a></td>
+                                </tr>
+                                <tr>
+                                  <td class="code">403</td>
+                                  <td class="description">User was not authorized to perform action.</td>
+                                  <td class="type"><a href="#">NotAuthorizedException</a></td>
+                                </tr>
+                              </table>
+                              
+                              
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="apiendpoint-1-post">
+                              Some information about the POST endpoint goes here.
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="apiendpoint-1-del">
+                              Some information about the DELETE endpoint goes here.
+                            </div>
+                          </div>
+                        </div>
                       </div>
-    
+
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">/apis/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{apiId}</span>/<span class="endpoint-param">{version}</span></a>
+                            <a href="#apiendpoint-2" data-toggle="collapse" onclick="blur()">/apis/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{apiId}</span>/<span class="endpoint-param">{version}</span></a>
                             <span class="api-endpoint-heading-gppd">
                               <span class="api-endpoint-heading-gppd-get enabled">G</span>
                               <span class="api-endpoint-heading-gppd-put">P</span>
@@ -158,13 +218,145 @@
                             </span>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div id="apiendpoint-2" class="api-endpoint-detail collapse">
+                          <ul class="nav nav-tabs nav-tabs-pf">
+                            <li class="tab-get active"><a href="#apiendpoint-2-get" role="tab" data-toggle="tab" onclick="blur()">GET</a></li>
+                            <li class="tab-put disabled"><a href="#" onclick="blur()">PUT</a></li>
+                            <li class="tab-post disabled"><a href="#" onclick="blur()">POST</a></li>
+                            <li class="tab-del"><a href="#apiendpoint-2-del" role="tab" data-toggle="tab" onclick="blur()">DELETE</a></li>
+                          </ul>
+                          <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="apiendpoint-2-get">
+                              <h1>Get a Published API</h1>
+                              <p class="description">
+                                Returns information about a single published API.  Required parameters include the organization id,
+                                API id, and API version.
+                              </p>
+                              <hr/>
+                              <h2>Parameters</h2>
+                              <table class="table table-striped api-endpoint-parameters">
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th></th>
+                                  <th>Description</th>
+                                  <th>Type</th>
+                                </tr>
+                                <tr>
+                                  <td class="parameter">organizationId</td>
+                                  <td class="icons">
+                                    <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-circle"></i>
+                                    <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
+                                  </td>
+                                  <td class="description">The API's organization id.</td>
+                                  <td class="type">String</td>
+                                </tr>
+                                <tr>
+                                  <td class="parameter">apiId</td>
+                                  <td class="icons">
+                                    <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-circle"></i>
+                                    <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
+                                  </td>
+                                  <td class="description">The API's unique identifier.</td>
+                                  <td class="type">String</td>
+                                </tr>
+                                <tr>
+                                  <td class="parameter">version</td>
+                                  <td class="icons">
+                                    <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-circle"></i>
+                                    <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
+                                  </td>
+                                  <td class="description">The version of the API to get.</td>
+                                  <td class="type">String</td>
+                                </tr>
+                              </table>
+                              <h2>Response (Success)</h2>
+                              <p>A successful call will result in a <strong>201 Created</strong> HTTP response.</p>
+                              <h2>Response (Failure)</h2>
+                              <table class="table table-striped api-endpoint-parameters">
+                                <tr>
+                                  <th>Status Code</th>
+                                  <th>Reason</th>
+                                  <th>Type</th>
+                                </tr>
+                                <tr>
+                                  <td class="code">403</td>
+                                  <td class="description">User was not authorized to perform action.</td>
+                                  <td class="type"><a href="#">NotAuthorizedException</a></td>
+                                </tr>
+                              </table>
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="apiendpoint-2-del">
+                              <h1>Retire (Delete) an API</h1>
+                              <p class="description">
+                                Retires a previously published API from the Gateway, immediately making
+                                the API unavailable for consumption.
+                              </p>
+                              <hr/>
+                              <h2>Parameters</h2>
+                              <table class="table table-striped api-endpoint-parameters">
+                                <tr>
+                                  <th>Parameter</th>
+                                  <th></th>
+                                  <th>Description</th>
+                                  <th>Type</th>
+                                </tr>
+                                <tr>
+                                  <td class="parameter">organizationId</td>
+                                  <td class="icons">
+                                    <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-circle"></i>
+                                    <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
+                                  </td>
+                                  <td class="description">The API's organization id.</td>
+                                  <td class="type">String</td>
+                                </tr>
+                                <tr>
+                                  <td class="parameter">apiId</td>
+                                  <td class="icons">
+                                    <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-circle"></i>
+                                    <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
+                                  </td>
+                                  <td class="description">The API's unique identifier.</td>
+                                  <td class="type">String</td>
+                                </tr>
+                                <tr>
+                                  <td class="parameter">version</td>
+                                  <td class="icons">
+                                    <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-circle"></i>
+                                    <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
+                                  </td>
+                                  <td class="description">The version of the API to get.</td>
+                                  <td class="type">String</td>
+                                </tr>
+                              </table>
+                              <h2>Response (Success)</h2>
+                              <p>A successful call will result in a <strong>204 No Content</strong> HTTP response.</p>
+                              <h2>Response (Failure)</h2>
+                              <table class="table table-striped api-endpoint-parameters">
+                                <tr>
+                                  <th>Status Code</th>
+                                  <th>Reason</th>
+                                  <th>Type</th>
+                                </tr>
+                                <tr>
+                                  <td class="code">400</td>
+                                  <td class="description">Unexpected error when attempting the delete.</td>
+                                  <td class="type"><a href="#">ApiDeleteException</a></td>
+                                </tr>
+                                <tr>
+                                  <td class="code">403</td>
+                                  <td class="description">User was not authorized to perform action.</td>
+                                  <td class="type"><a href="#">NotAuthorizedException</a></td>
+                                </tr>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
                       </div>
     
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">/apis/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{apiId}</span>/<span class="endpoint-param">{version}</span>/endpoint</a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">/apis/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{apiId}</span>/<span class="endpoint-param">{version}</span>/endpoint</a>
                             <span class="api-endpoint-heading-gppd">
                               <span class="api-endpoint-heading-gppd-get enabled">G</span>
                               <span class="api-endpoint-heading-gppd-put">P</span>
@@ -173,13 +365,13 @@
                             </span>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div class="api-endpoint-detail collapse"></div>
                       </div>
     
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">/clients</a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">/clients</a>
                             <span class="api-endpoint-heading-gppd">
                               <span class="api-endpoint-heading-gppd-get">G</span>
                               <span class="api-endpoint-heading-gppd-put enabled">P</span>
@@ -188,13 +380,13 @@
                             </span>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div class="api-endpoint-detail collapse"></div>
                       </div>
     
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">/clients/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{clientId}</span>/<span class="endpoint-param">{version}</span></a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">/clients/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{clientId}</span>/<span class="endpoint-param">{version}</span></a>
                             <span class="api-endpoint-heading-gppd">
                               <span class="api-endpoint-heading-gppd-get enabled">G</span>
                               <span class="api-endpoint-heading-gppd-put">P</span>
@@ -203,13 +395,13 @@
                             </span>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div class="api-endpoint-detail collapse"></div>
                       </div>
     
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">/system/status</a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">/system/status</a>
                             <span class="api-endpoint-heading-gppd">
                               <span class="api-endpoint-heading-gppd-get enabled">G</span>
                               <span class="api-endpoint-heading-gppd-put">P</span>
@@ -218,7 +410,7 @@
                             </span>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div class="api-endpoint-detail collapse"></div>
                       </div>
 
                     </div>
@@ -263,7 +455,7 @@
                             <a href="#">{Api}</a>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div class="api-type-detail collapse"></div>
                       </div>
     
                       <div class="api-endpoint">
@@ -272,34 +464,34 @@
                             <a href="#">{Client}</a>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div class="api-type-detail collapse"></div>
                       </div>
     
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">{NotAuthorizedError}</a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">{NotAuthorizedError}</a>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div class="api-type-detail collapse"></div>
                       </div>
     
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">{GatewayApiError}</a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">{GatewayApiError}</a>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div class="api-type-detail collapse"></div>
                       </div>
     
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">{SystemStatus}</a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">{SystemStatus}</a>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail"></div>
+                        <div class="api-type-detail collapse"></div>
                       </div>
     
                     </div>
@@ -312,6 +504,13 @@
         </div>
       </div>
     </div>
+    
+    <script type="text/javascript">
+      $(function () {
+    	  $('[data-toggle="tooltip"]').tooltip()
+    	})
+    </script>
+    
   </body>
 
 </html>
