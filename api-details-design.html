@@ -185,12 +185,12 @@
                                 <tr>
                                   <td class="code">400</td>
                                   <td class="description">Unexpected error when attempting to publish the API.</td>
-                                  <td class="type"><a href="#">PublishingException</a></td>
+                                  <td class="type"><a href="#">PublishingError</a></td>
                                 </tr>
                                 <tr>
                                   <td class="code">403</td>
                                   <td class="description">User was not authorized to perform action.</td>
-                                  <td class="type"><a href="#">NotAuthorizedException</a></td>
+                                  <td class="type"><a href="#">NotAuthorizedError</a></td>
                                 </tr>
                               </table>
                               
@@ -281,7 +281,7 @@
                                 <tr>
                                   <td class="code">403</td>
                                   <td class="description">User was not authorized to perform action.</td>
-                                  <td class="type"><a href="#">NotAuthorizedException</a></td>
+                                  <td class="type"><a href="#">NotAuthorizedError</a></td>
                                 </tr>
                               </table>
                             </div>
@@ -340,12 +340,12 @@
                                 <tr>
                                   <td class="code">400</td>
                                   <td class="description">Unexpected error when attempting the delete.</td>
-                                  <td class="type"><a href="#">ApiDeleteException</a></td>
+                                  <td class="type"><a href="#">ApiDeleteError</a></td>
                                 </tr>
                                 <tr>
                                   <td class="code">403</td>
                                   <td class="description">User was not authorized to perform action.</td>
-                                  <td class="type"><a href="#">NotAuthorizedException</a></td>
+                                  <td class="type"><a href="#">NotAuthorizedError</a></td>
                                 </tr>
                               </table>
                             </div>
@@ -440,7 +440,7 @@
                               </button>
                             </td>
                             <td>
-                              <span style="margin-left: 10px; white-space: nowrap;">Showing <strong>all 5</strong> types</span>
+                              <span style="margin-left: 10px; white-space: nowrap;">Showing <strong>all 8</strong> types</span>
                             </td>
                           </tr>
                         </tbody>
@@ -448,11 +448,29 @@
                       <button style="display: inline" class="btn btn-primary pull-right" type="button"><span class="fa fa-fw fa-plus"></span>Add Type</button>
                     </div>
                     <div class="card-pf-body" style="padding-bottom: 20px;">
-                    
+
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">{Api}</a>
+                            <a href="#" onclick="alert('Not yet implemented.')">{Api}</a>
+                          </h2>
+                        </div>
+                        <div class="api-type-detail collapse"></div>
+                      </div>
+
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#" onclick="alert('Not yet implemented.')">{NewApi}</a>
+                          </h2>
+                        </div>
+                        <div class="api-type-detail collapse"></div>
+                      </div>
+
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#" onclick="alert('Not yet implemented.')">{Client}</a>
                           </h2>
                         </div>
                         <div class="api-type-detail collapse"></div>
@@ -461,7 +479,7 @@
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#">{Client}</a>
+                            <a href="#" onclick="alert('Not yet implemented.')">{NewClient}</a>
                           </h2>
                         </div>
                         <div class="api-type-detail collapse"></div>
@@ -470,7 +488,16 @@
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">{NotAuthorizedError}</a>
+                            <a href="#" onclick="alert('Not yet implemented.')">{NotAuthorizedError}</a>
+                          </h2>
+                        </div>
+                        <div class="api-type-detail collapse"></div>
+                      </div>
+
+                      <div class="api-endpoint">
+                        <div class="api-endpoint-heading">
+                          <h2>
+                            <a href="#" onclick="alert('Not yet implemented.')">{PublishingError}</a>
                           </h2>
                         </div>
                         <div class="api-type-detail collapse"></div>
@@ -479,7 +506,7 @@
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">{GatewayApiError}</a>
+                            <a href="#" onclick="alert('Not yet implemented.')">{ApiDeleteError}</a>
                           </h2>
                         </div>
                         <div class="api-type-detail collapse"></div>
@@ -488,7 +515,7 @@
                       <div class="api-endpoint">
                         <div class="api-endpoint-heading">
                           <h2>
-                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">{SystemStatus}</a>
+                            <a href="#" onclick="alert('Not yet implemented.')">{SystemStatus}</a>
                           </h2>
                         </div>
                         <div class="api-type-detail collapse"></div>
