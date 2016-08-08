@@ -180,6 +180,9 @@
 	padding-bottom: 5px;
 }
 
+#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active a {
+	font-weight: bold;
+}
 #api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-get a {
   color: green;
 }
