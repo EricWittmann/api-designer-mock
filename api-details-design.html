@@ -18,6 +18,7 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/js/patternfly.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.4/ace.js"></script>
     <script type="text/javascript" src="js/api-designer.js"></script>
   </head>
 
@@ -173,6 +174,7 @@
                                   <td class="type"><a href="#">NewApi</a></td>
                                 </tr>
                               </table>
+                              <hr />
                               <h2>Response (Success)</h2>
                               <p>A successful call will result in a <strong>201 Created</strong> HTTP response.</p>
                               <h2>Response (Failure)</h2>
@@ -269,8 +271,28 @@
                                   <td class="type">String</td>
                                 </tr>
                               </table>
+                              <hr />
                               <h2>Response (Success)</h2>
-                              <p>A successful call will result in a <strong>201 Created</strong> HTTP response.</p>
+                              <p>
+                                A successful call will result in a <strong>200 OK</strong> HTTP response.
+                              </p>
+                              <div class="api-response">
+                                <table>
+                                  <tr>
+                                    <td class="tlabel"><span>Response Body:</span></td>
+                                    <td><a href="#">Api</a></td>
+                                  </tr>
+                                  <tr>
+                                    <td class="tlabel"><span>Response Content Type:</span></td>
+                                    <td>
+                                      <select>
+                                        <option selected="selected">application/json</option>
+                                        <option>text/xml</option>
+                                      </select>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </div>
                               <h2>Response (Failure)</h2>
                               <table class="table table-striped api-endpoint-parameters">
                                 <tr>
@@ -328,6 +350,7 @@
                                   <td class="type">String</td>
                                 </tr>
                               </table>
+                              <hr />
                               <h2>Response (Success)</h2>
                               <p>A successful call will result in a <strong>204 No Content</strong> HTTP response.</p>
                               <h2>Response (Failure)</h2>
@@ -449,73 +472,147 @@
                     </div>
                     <div class="card-pf-body" style="padding-bottom: 20px;">
 
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-type">
+                        <div class="api-type-heading">
                           <h2>
-                            <a href="#" onclick="alert('Not yet implemented.')">{Api}</a>
+                            <a href="#apitype-1" data-toggle="collapse" onclick="blur()">{Api}</a>
+                          </h2>
+                        </div>
+                        <div id="apitype-1" class="api-type-detail collapse">
+                        
+                          <ul class="nav nav-tabs nav-tabs-pf">
+                            <li class="active"><a href="#apitype-1-example" role="tab" data-toggle="tab" onclick="blur()">Example</a></li>
+                            <li class=""><a href="#apitype-1-schema" role="tab" data-toggle="tab" onclick="blur()">Schema</a></li>
+                          </ul>
+                          <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="apitype-1-example">
+                              <div id="apitype-1-example-editor" class="code-editor" style="width: 100%; margin-top: 5px;">{
+  "publicAPI" : true,
+  "organizationId" : "foo-org",
+  "apiId" : "my-1st-api",
+  "version" : "1.7",
+  "endpoint" : "http://example.org/api",
+  "endpointType" : "rest",
+  "endpointContentType" : "application/json",
+  "apiPolicies" : [
+    {
+      "policyImpl" : "io.apiman.policies.AuthPolicy",
+      "policyConfig" : {
+        "type" : "BASIC",
+        "required" : true,
+        "realm" : "MyRealm"
+      }
+    }
+  ]
+}</div>
+                              
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="apitype-1-schema">
+                              <div id="apitype-1-schema-editor" class="code-editor" style="width: 100%; margin-top: 5px;">{
+  "type": "object",
+  "required": [
+    "organizationId",
+    "apiId",
+    "version",
+    "endpoint",
+    "endpointType",
+    "endpointContentType"
+  ],
+  "properties": {
+    "publicAPI": {
+      "type": "boolean",
+      "default": false
+    },
+    "organizationId": {
+      "type": "string"
+    },
+    "apiId": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "endpoint": {
+      "type": "string"
+    },
+    "endpointType": {
+      "type": "string"
+    },
+    "endpointContentType": {
+      "type": "string"
+    },
+    "apiPolicies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Pet"
+      }
+    }
+  }
+}</div>
+                            
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="api-type">
+                        <div class="api-type-heading">
+                          <h2>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on {Api} instead!')" onclick="blur()">{NewApi}</a>
                           </h2>
                         </div>
                         <div class="api-type-detail collapse"></div>
                       </div>
 
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-type">
+                        <div class="api-type-heading">
                           <h2>
-                            <a href="#" onclick="alert('Not yet implemented.')">{NewApi}</a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on {Api} instead!')" onclick="blur()">{Client}</a>
+                          </h2>
+                        </div>
+                        <div class="api-type-detail collapse"></div>
+                      </div>
+    
+                      <div class="api-type">
+                        <div class="api-type-heading">
+                          <h2>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on {Api} instead!')" onclick="blur()">{NewClient}</a>
+                          </h2>
+                        </div>
+                        <div class="api-type-detail collapse"></div>
+                      </div>
+    
+                      <div class="api-type">
+                        <div class="api-type-heading">
+                          <h2>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on {Api} instead!')" onclick="blur()">{NotAuthorizedError}</a>
                           </h2>
                         </div>
                         <div class="api-type-detail collapse"></div>
                       </div>
 
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-type">
+                        <div class="api-type-heading">
                           <h2>
-                            <a href="#" onclick="alert('Not yet implemented.')">{Client}</a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on {Api} instead!')" onclick="blur()">{PublishingError}</a>
                           </h2>
                         </div>
                         <div class="api-type-detail collapse"></div>
                       </div>
     
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-type">
+                        <div class="api-type-heading">
                           <h2>
-                            <a href="#" onclick="alert('Not yet implemented.')">{NewClient}</a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on {Api} instead!')" onclick="blur()">{ApiDeleteError}</a>
                           </h2>
                         </div>
                         <div class="api-type-detail collapse"></div>
                       </div>
     
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-type">
+                        <div class="api-type-heading">
                           <h2>
-                            <a href="#" onclick="alert('Not yet implemented.')">{NotAuthorizedError}</a>
-                          </h2>
-                        </div>
-                        <div class="api-type-detail collapse"></div>
-                      </div>
-
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
-                          <h2>
-                            <a href="#" onclick="alert('Not yet implemented.')">{PublishingError}</a>
-                          </h2>
-                        </div>
-                        <div class="api-type-detail collapse"></div>
-                      </div>
-    
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
-                          <h2>
-                            <a href="#" onclick="alert('Not yet implemented.')">{ApiDeleteError}</a>
-                          </h2>
-                        </div>
-                        <div class="api-type-detail collapse"></div>
-                      </div>
-    
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
-                          <h2>
-                            <a href="#" onclick="alert('Not yet implemented.')">{SystemStatus}</a>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on {Api} instead!')" onclick="blur()">{SystemStatus}</a>
                           </h2>
                         </div>
                         <div class="api-type-detail collapse"></div>
@@ -535,6 +632,22 @@
     <script type="text/javascript">
       $(function () {
     	  $('[data-toggle="tooltip"]').tooltip()
+    	  
+    	  // Initialize the editor for the example
+    	  var editor = ace.edit("apitype-1-example-editor");
+  	    editor.setTheme("ace/theme/github");
+  	    editor.getSession().setMode("ace/mode/json");
+  	    editor.setOptions({
+  	      maxLines: Infinity
+  	    });
+
+        // Initialize the editor for the example
+        editor = ace.edit("apitype-1-schema-editor");
+        editor.setTheme("ace/theme/github");
+        editor.getSession().setMode("ace/mode/json");
+        editor.setOptions({
+          maxLines: Infinity
+        });
     	})
     </script>
     
