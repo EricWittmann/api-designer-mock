@@ -40,17 +40,18 @@
 .api-editor .api-editor-body {
 }
 
-.api-editor .api-editor-body .CodeMirror {
+.api-editor .api-editor-body #api-editor-source {
 	height: auto;
 	position: fixed;
-	top: 120px;
+	top: 113px;
 	bottom: 0px;
 	left: 20px;
 	right: 50%;
+	overflow: auto;
 }
 .api-editor .api-editor-body .api-editor-docs {
 	position: fixed;
-	top: 120px;
+	top: 113px;
 	bottom: 0px;
 	left: 51%;
 	right: 0px;

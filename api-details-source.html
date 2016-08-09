@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly-additions.min.css">
     <link rel="stylesheet" href="css/api-designer.css" />
@@ -19,7 +18,7 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/js/patternfly.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.17.0/codemirror.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.4/ace.js"></script>
     <script type="text/javascript" src="js/api-designer.js"></script>
   </head>
 
@@ -80,7 +79,7 @@
       </div>
 
       <div class="api-editor-body">
-        <textarea id="api-editor-source" style="width: 100%; height: 650px">swagger: "2.0"
+        <div id="api-editor-source">swagger: "2.0"
 info:
   version: 1.0.0
   title: Gateway Configuration API
@@ -440,7 +439,7 @@ definitions:
     example:
       code: 10002
       message: 'Unexpected error attempting to create a limit.'
-        </textarea>
+</div>
     
         <div class="api-editor-docs">
           <div class="container-fluid">
@@ -459,10 +458,10 @@ definitions:
 
     
     <script type="text/javascript">
-      var myTextarea = document.getElementById("api-editor-source");
-      var editor = CodeMirror.fromTextArea(myTextarea, {
-        lineNumbers: true
-      });
+      // Initialize the editor for the example
+      var editor = ace.edit("api-editor-source");
+      editor.setTheme("ace/theme/github");
+      editor.getSession().setMode("ace/mode/yaml");
     </script>
     
   </body>
