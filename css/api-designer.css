@@ -229,7 +229,7 @@
 	width: 1%;
 	white-space: nowrap;
 }
-#api-editor .api-endpoint-parameters td.icons {
+#api-editor .api-endpoint-parameters td.icons, .api-details table td.icons {
 	color: #666;
   width: 1%;
   white-space: nowrap;
