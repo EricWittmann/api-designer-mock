@@ -106,40 +106,40 @@
   padding-left: 20px;
 }
 
-.api-endpoint, .api-type {
+.api-path, .api-type {
 	margin-bottom: 5px;
 }
 
-.api-endpoint .api-endpoint-heading, .api-type .api-type-heading {
+.api-path .api-path-heading, .api-type .api-type-heading {
   border: 1px solid transparent;
   border-top: 1px solid rgb(57, 165, 220);
   background-color: #f3f3fa;
 }
-.api-endpoint .api-endpoint-heading h2, .api-type .api-type-heading h2 {
+.api-path .api-path-heading h2, .api-type .api-type-heading h2 {
   padding: 3px;
   font-size: 18px;
   margin: 5px;
 }
-.api-endpoint .api-endpoint-heading h2 a, .api-type .api-type-heading h2 a {
+.api-path .api-path-heading h2 a, .api-type .api-type-heading h2 a {
   color: black;
   font-weight: 300;
 }
-.api-endpoint .api-endpoint-heading h2 a span.endpoint-param {
+.api-path .api-path-heading h2 a span.path-param {
 	font-weight: 400;
 	color: #ff6a7c;
 }
-.api-endpoint .api-endpoint-heading:hover, .api-type .api-type-heading:hover {
+.api-path .api-path-heading:hover, .api-type .api-type-heading:hover {
 	background-color: rgb(57, 165, 220);
 	color: white;
 }
-.api-endpoint .api-endpoint-heading:hover h2 a, .api-type .api-type-heading:hover h2 a {
+.api-path .api-path-heading:hover h2 a, .api-type .api-type-heading:hover h2 a {
   color: white;
 }
-.api-endpoint .api-endpoint-heading:hover h2 a span.endpoint-param {
+.api-path .api-path-heading:hover h2 a span.path-param {
   color: white;
 }
 
-.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd {
+.api-path .api-path-heading h2 .api-path-heading-gppd {
 	float: right;
 	font-weight: 400;
 	border: 1px solid rgb(0, 101, 156);
@@ -149,98 +149,98 @@
 	border-radius: 3px;
 }
 
-.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd span {
+.api-path .api-path-heading h2 .api-path-heading-gppd span {
 	color: #ccc;
 }
-.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd span.enabled {
+.api-path .api-path-heading h2 .api-path-heading-gppd span.enabled {
   color: black;
 }
-.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd .api-endpoint-heading-gppd-get.enabled {
+.api-path .api-path-heading h2 .api-path-heading-gppd .api-path-heading-gppd-get.enabled {
 	color: green;
 }
-.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd .api-endpoint-heading-gppd-put.enabled {
+.api-path .api-path-heading h2 .api-path-heading-gppd .api-path-heading-gppd-put.enabled {
   color: orange;
 }
-.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd .api-endpoint-heading-gppd-post.enabled {
+.api-path .api-path-heading h2 .api-path-heading-gppd .api-path-heading-gppd-post.enabled {
   color: orange;
 }
-.api-endpoint .api-endpoint-heading h2 .api-endpoint-heading-gppd .api-endpoint-heading-gppd-del.enabled {
+.api-path .api-path-heading h2 .api-path-heading-gppd .api-path-heading-gppd-del.enabled {
   color: red;
 }
 
-.api-endpoint .api-endpoint-detail, .api-type .api-type-detail {
+.api-path .api-path-detail, .api-type .api-type-detail {
 	padding: 5px;
 }
 
-.api-endpoint .api-endpoint-detail .nav-tabs, .api-type .api-type-detail .nav-tabs {
+.api-path .api-path-detail .nav-tabs, .api-type .api-type-detail .nav-tabs {
 	font-size: 12px;
 	margin-bottom: 0px;
 }
-.api-endpoint .api-endpoint-detail .nav-tabs li a, .api-type .api-type-detail .nav-tabs li a {
+.api-path .api-path-detail .nav-tabs li a, .api-type .api-type-detail .nav-tabs li a {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
 
-#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active a {
+#api-editor .api-path .api-path-detail .nav-tabs-pf li.active a {
 	font-weight: bold;
 }
-#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-get a {
+#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-get a {
   color: green;
 }
-#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-get a::before {
+#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-get a::before {
   background: green !important;
 }
-#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-put a {
+#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-put a {
   color: orange;
 }
-#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-put a::before {
+#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-put a::before {
   background: orange !important;
 }
-#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-post a {
+#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-post a {
   color: orange;
 }
-#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-post a::before {
+#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-post a::before {
   background: orange !important;
 }
-#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-del a {
+#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-del a {
   color: red;
 }
-#api-editor .api-endpoint .api-endpoint-detail .nav-tabs-pf li.active.tab-del a::before {
+#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-del a::before {
   background: red !important;
 }
 
-#api-editor .api-endpoint .api-endpoint-detail h1 {
+#api-editor .api-path .api-path-detail h1 {
 	font-size: 14px;
 	font-weight: bold;
 	color: #666;
 	margin-top: 15px;
 	margin-bottom: 0px;
 }
-#api-editor .api-endpoint .api-endpoint-detail hr {
+#api-editor .api-path .api-path-detail hr {
 	margin-top: 8px;
 	margin-bottom: 8px;
 }
-#api-editor .api-endpoint .api-endpoint-detail h2 {
+#api-editor .api-path .api-path-detail h2 {
 	font-size: 15px;
 	text-decoration: underline;
 }
-#api-editor .api-endpoint-parameters td.parameter {
+#api-editor .api-path-parameters td.parameter {
 	color: #ff6a7c;
 	width: 1%;
 	white-space: nowrap;
 }
-#api-editor .api-endpoint-parameters td.icons, .api-details table td.icons {
+#api-editor .api-path-parameters td.icons, .api-details table td.icons {
 	color: #666;
   width: 1%;
   white-space: nowrap;
 }
-#api-editor .api-endpoint-parameters td.icons i:hover {
+#api-editor .api-path-parameters td.icons i:hover {
 	cursor: pointer;
 	color: #321;
 }
-#api-editor .api-endpoint-parameters td.description {
+#api-editor .api-path-parameters td.description {
 }
-#api-editor .api-endpoint-parameters td.type {
+#api-editor .api-path-parameters td.type {
 }
 
 #api-editor .api-response .tlabel {

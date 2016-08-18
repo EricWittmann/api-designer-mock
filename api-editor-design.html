@@ -112,7 +112,7 @@
                   </div>
                 </div>
 
-                <!-- Endpoint List Card -->
+                <!-- Path List Card -->
                 <div class="">
                   <div class="card-pf api-editor-card">
                     <div class="card-pf-heading" style="padding: 10px; padding-bottom: 5px;">
@@ -121,35 +121,35 @@
                           <tr>
                             <td><span class="fa fa-fw fa-bolt" style="font-size: 16px; width: 50px"></span></td>
                             <td width="99%"><input style="padding-left: 3px; padding-top: 2px; padding-bottom: 2px; width: 220px; border: 1px solid rgb(183,183,183); font-size: 13px; line-height: 20px" id="type-filter" 
-                              value="" placeholder="Filter by endpoint..." type="text"></td>
+                              value="" placeholder="Filter by path..." type="text"></td>
                             <td width="1%">
-                              <button id="endpoint-filter-btn" class="btn btn-default" style="border-left: 0px;">
+                              <button id="path-filter-btn" class="btn btn-default" style="border-left: 0px;">
                                 <i class="fa fa-fw fa-search"></i>
                               </button>
                             </td>
                             <td>
-                              <span style="margin-left: 10px; white-space: nowrap;">Showing <strong>all 6</strong> endpoints</span>
+                              <span style="margin-left: 10px; white-space: nowrap;">Showing <strong>all 6</strong> paths</span>
                             </td>
                           </tr>
                         </tbody>
                       </table>
-                      <button style="display: inline" class="btn btn-primary pull-right" type="button"><span class="fa fa-fw fa-plus"></span>Add Endpoint</button>
+                      <button style="display: inline" class="btn btn-primary pull-right" type="button"><span class="fa fa-fw fa-plus"></span>Add Path</button>
                     </div>
                     <div class="card-pf-body" style="padding-bottom: 20px;">
                     
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-path">
+                        <div class="api-path-heading">
                           <h2>
-                            <a href="#apiendpoint-1" data-toggle="collapse" onclick="blur()">/apis</a>
-                            <span class="api-endpoint-heading-gppd">
-                              <span class="api-endpoint-heading-gppd-get">G</span>
-                              <span class="api-endpoint-heading-gppd-put enabled">P</span>
-                              <span class="api-endpoint-heading-gppd-post">P</span>
-                              <span class="api-endpoint-heading-gppd-del">D</span>
+                            <a href="#apipath-1" data-toggle="collapse" onclick="blur()">/apis</a>
+                            <span class="api-path-heading-gppd">
+                              <span class="api-path-heading-gppd-get">G</span>
+                              <span class="api-path-heading-gppd-put enabled">P</span>
+                              <span class="api-path-heading-gppd-post">P</span>
+                              <span class="api-path-heading-gppd-del">D</span>
                             </span>
                           </h2>
                         </div>
-                        <div id="apiendpoint-1" class="api-endpoint-detail collapse">
+                        <div id="apipath-1" class="api-path-detail collapse">
                           <ul class="nav nav-tabs nav-tabs-pf">
                             <li class="tab-get disabled"><a href="#" onclick="blur()">GET</a></li>
                             <li class="tab-put active"><a href="#" onclick="blur()">PUT</a></li>
@@ -157,10 +157,10 @@
                             <li class="tab-del disabled"><a href="#" onclick="blur()">DELETE</a></li>
                           </ul>
                           <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane" id="apiendpoint-1-get">
-                              Some information about the GET endpoint goes here.
+                            <div role="tabpanel" class="tab-pane" id="apipath-1-get">
+                              Some information about the GET path goes here.
                             </div>
-                            <div role="tabpanel" class="tab-pane active" id="apiendpoint-1-put">
+                            <div role="tabpanel" class="tab-pane active" id="apipath-1-put">
                               <h1>Publish an API</h1>
                               <p class="description">
                                 Used to publish a new (or updated) API to the Gateway.
@@ -183,7 +183,7 @@
                               <h2>Response (Success)</h2>
                               <p>A successful call will result in a <strong>201 Created</strong> HTTP response.</p>
                               <h2>Response (Failure)</h2>
-                              <table class="table table-striped api-endpoint-parameters">
+                              <table class="table table-striped api-path-parameters">
                                 <tr>
                                   <th>Status Code</th>
                                   <th>Reason</th>
@@ -203,37 +203,37 @@
                               
                               
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="apiendpoint-1-post">
-                              Some information about the POST endpoint goes here.
+                            <div role="tabpanel" class="tab-pane" id="apipath-1-post">
+                              Some information about the POST path goes here.
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="apiendpoint-1-del">
-                              Some information about the DELETE endpoint goes here.
+                            <div role="tabpanel" class="tab-pane" id="apipath-1-del">
+                              Some information about the DELETE path goes here.
                             </div>
                           </div>
                         </div>
                       </div>
 
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-path">
+                        <div class="api-path-heading">
                           <h2>
-                            <a href="#apiendpoint-2" data-toggle="collapse" onclick="blur()">/apis/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{apiId}</span>/<span class="endpoint-param">{version}</span></a>
-                            <span class="api-endpoint-heading-gppd">
-                              <span class="api-endpoint-heading-gppd-get enabled">G</span>
-                              <span class="api-endpoint-heading-gppd-put">P</span>
-                              <span class="api-endpoint-heading-gppd-post">P</span>
-                              <span class="api-endpoint-heading-gppd-del enabled">D</span>
+                            <a href="#apipath-2" data-toggle="collapse" onclick="blur()">/apis/<span class="path-param">{organizationId}</span>/<span class="path-param">{apiId}</span>/<span class="path-param">{version}</span></a>
+                            <span class="api-path-heading-gppd">
+                              <span class="api-path-heading-gppd-get enabled">G</span>
+                              <span class="api-path-heading-gppd-put">P</span>
+                              <span class="api-path-heading-gppd-post">P</span>
+                              <span class="api-path-heading-gppd-del enabled">D</span>
                             </span>
                           </h2>
                         </div>
-                        <div id="apiendpoint-2" class="api-endpoint-detail collapse">
+                        <div id="apipath-2" class="api-path-detail collapse">
                           <ul class="nav nav-tabs nav-tabs-pf">
-                            <li class="tab-get active"><a href="#apiendpoint-2-get" role="tab" data-toggle="tab" onclick="blur()">GET</a></li>
+                            <li class="tab-get active"><a href="#apipath-2-get" role="tab" data-toggle="tab" onclick="blur()">GET</a></li>
                             <li class="tab-put disabled"><a href="#" onclick="blur()">PUT</a></li>
                             <li class="tab-post disabled"><a href="#" onclick="blur()">POST</a></li>
-                            <li class="tab-del"><a href="#apiendpoint-2-del" role="tab" data-toggle="tab" onclick="blur()">DELETE</a></li>
+                            <li class="tab-del"><a href="#apipath-2-del" role="tab" data-toggle="tab" onclick="blur()">DELETE</a></li>
                           </ul>
                           <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="apiendpoint-2-get">
+                            <div role="tabpanel" class="tab-pane active" id="apipath-2-get">
                               <h1>Get a Published API</h1>
                               <p class="description">
                                 Returns information about a single published API.  Required parameters include the organization id,
@@ -241,7 +241,7 @@
                               </p>
                               <hr/>
                               <h2>Parameters</h2>
-                              <table class="table table-striped api-endpoint-parameters">
+                              <table class="table table-striped api-path-parameters">
                                 <tr>
                                   <th>Parameter</th>
                                   <th></th>
@@ -255,7 +255,7 @@
                                     <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
                                   </td>
                                   <td class="description">The API's organization id.</td>
-                                  <td class="type">String</td>
+                                  <td class="type">string</td>
                                 </tr>
                                 <tr>
                                   <td class="parameter">apiId</td>
@@ -264,7 +264,7 @@
                                     <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
                                   </td>
                                   <td class="description">The API's unique identifier.</td>
-                                  <td class="type">String</td>
+                                  <td class="type">string</td>
                                 </tr>
                                 <tr>
                                   <td class="parameter">version</td>
@@ -273,7 +273,7 @@
                                     <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
                                   </td>
                                   <td class="description">The version of the API to get.</td>
-                                  <td class="type">String</td>
+                                  <td class="type">string</td>
                                 </tr>
                               </table>
                               <hr />
@@ -299,7 +299,7 @@
                                 </table>
                               </div>
                               <h2>Response (Failure)</h2>
-                              <table class="table table-striped api-endpoint-parameters">
+                              <table class="table table-striped api-path-parameters">
                                 <tr>
                                   <th>Status Code</th>
                                   <th>Reason</th>
@@ -312,7 +312,7 @@
                                 </tr>
                               </table>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="apiendpoint-2-del">
+                            <div role="tabpanel" class="tab-pane" id="apipath-2-del">
                               <h1>Retire (Delete) an API</h1>
                               <p class="description">
                                 Retires a previously published API from the Gateway, immediately making
@@ -320,7 +320,7 @@
                               </p>
                               <hr/>
                               <h2>Parameters</h2>
-                              <table class="table table-striped api-endpoint-parameters">
+                              <table class="table table-striped api-path-parameters">
                                 <tr>
                                   <th>Parameter</th>
                                   <th></th>
@@ -334,7 +334,7 @@
                                     <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
                                   </td>
                                   <td class="description">The API's organization id.</td>
-                                  <td class="type">String</td>
+                                  <td class="type">string</td>
                                 </tr>
                                 <tr>
                                   <td class="parameter">apiId</td>
@@ -343,7 +343,7 @@
                                     <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
                                   </td>
                                   <td class="description">The API's unique identifier.</td>
-                                  <td class="type">String</td>
+                                  <td class="type">string</td>
                                 </tr>
                                 <tr>
                                   <td class="parameter">version</td>
@@ -352,14 +352,14 @@
                                     <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
                                   </td>
                                   <td class="description">The version of the API to get.</td>
-                                  <td class="type">String</td>
+                                  <td class="type">string</td>
                                 </tr>
                               </table>
                               <hr />
                               <h2>Response (Success)</h2>
                               <p>A successful call will result in a <strong>204 No Content</strong> HTTP response.</p>
                               <h2>Response (Failure)</h2>
-                              <table class="table table-striped api-endpoint-parameters">
+                              <table class="table table-striped api-path-parameters">
                                 <tr>
                                   <th>Status Code</th>
                                   <th>Reason</th>
@@ -381,64 +381,64 @@
                         </div>
                       </div>
     
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-path">
+                        <div class="api-path-heading">
                           <h2>
-                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">/apis/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{apiId}</span>/<span class="endpoint-param">{version}</span>/endpoint</a>
-                            <span class="api-endpoint-heading-gppd">
-                              <span class="api-endpoint-heading-gppd-get enabled">G</span>
-                              <span class="api-endpoint-heading-gppd-put">P</span>
-                              <span class="api-endpoint-heading-gppd-post">P</span>
-                              <span class="api-endpoint-heading-gppd-del">D</span>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">/apis/<span class="path-param">{organizationId}</span>/<span class="path-param">{apiId}</span>/<span class="path-param">{version}</span>/path</a>
+                            <span class="api-path-heading-gppd">
+                              <span class="api-path-heading-gppd-get enabled">G</span>
+                              <span class="api-path-heading-gppd-put">P</span>
+                              <span class="api-path-heading-gppd-post">P</span>
+                              <span class="api-path-heading-gppd-del">D</span>
                             </span>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail collapse"></div>
+                        <div class="api-path-detail collapse"></div>
                       </div>
     
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-path">
+                        <div class="api-path-heading">
                           <h2>
                             <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">/clients</a>
-                            <span class="api-endpoint-heading-gppd">
-                              <span class="api-endpoint-heading-gppd-get">G</span>
-                              <span class="api-endpoint-heading-gppd-put enabled">P</span>
-                              <span class="api-endpoint-heading-gppd-post">P</span>
-                              <span class="api-endpoint-heading-gppd-del">D</span>
+                            <span class="api-path-heading-gppd">
+                              <span class="api-path-heading-gppd-get">G</span>
+                              <span class="api-path-heading-gppd-put enabled">P</span>
+                              <span class="api-path-heading-gppd-post">P</span>
+                              <span class="api-path-heading-gppd-del">D</span>
                             </span>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail collapse"></div>
+                        <div class="api-path-detail collapse"></div>
                       </div>
     
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-path">
+                        <div class="api-path-heading">
                           <h2>
-                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">/clients/<span class="endpoint-param">{organizationId}</span>/<span class="endpoint-param">{clientId}</span>/<span class="endpoint-param">{version}</span></a>
-                            <span class="api-endpoint-heading-gppd">
-                              <span class="api-endpoint-heading-gppd-get enabled">G</span>
-                              <span class="api-endpoint-heading-gppd-put">P</span>
-                              <span class="api-endpoint-heading-gppd-post">P</span>
-                              <span class="api-endpoint-heading-gppd-del enabled">D</span>
+                            <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">/clients/<span class="path-param">{organizationId}</span>/<span class="path-param">{clientId}</span>/<span class="path-param">{version}</span></a>
+                            <span class="api-path-heading-gppd">
+                              <span class="api-path-heading-gppd-get enabled">G</span>
+                              <span class="api-path-heading-gppd-put">P</span>
+                              <span class="api-path-heading-gppd-post">P</span>
+                              <span class="api-path-heading-gppd-del enabled">D</span>
                             </span>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail collapse"></div>
+                        <div class="api-path-detail collapse"></div>
                       </div>
     
-                      <div class="api-endpoint">
-                        <div class="api-endpoint-heading">
+                      <div class="api-path">
+                        <div class="api-path-heading">
                           <h2>
                             <a href="#" onclick="alert('This is just a mockup, try clicking on one of the first two items in the list.')">/system/status</a>
-                            <span class="api-endpoint-heading-gppd">
-                              <span class="api-endpoint-heading-gppd-get enabled">G</span>
-                              <span class="api-endpoint-heading-gppd-put">P</span>
-                              <span class="api-endpoint-heading-gppd-post">P</span>
-                              <span class="api-endpoint-heading-gppd-del">D</span>
+                            <span class="api-path-heading-gppd">
+                              <span class="api-path-heading-gppd-get enabled">G</span>
+                              <span class="api-path-heading-gppd-put">P</span>
+                              <span class="api-path-heading-gppd-post">P</span>
+                              <span class="api-path-heading-gppd-del">D</span>
                             </span>
                           </h2>
                         </div>
-                        <div class="api-endpoint-detail collapse"></div>
+                        <div class="api-path-detail collapse"></div>
                       </div>
 
                     </div>
@@ -452,7 +452,7 @@
             <div class="container-fluid container-cards-pf">
               <div class="row row-cards-pf">
 
-                <!-- Type List Card -->
+                <!-- Definition List Card -->
                 <div class="">
                   <div class="card-pf api-editor-card">
                     <div class="card-pf-heading" style="padding: 10px; padding-bottom: 5px;">
@@ -460,10 +460,10 @@
                         <tbody>
                           <tr>
                             <td><span class="fa fa-fw fa-code" style="font-size: 16px; width: 50px"></span></td>
-                            <td width="99%"><input style="padding-left: 3px; padding-top: 2px; padding-bottom: 2px; width: 220px; border: 1px solid rgb(183,183,183); font-size: 13px; line-height: 20px" id="endpoint-filter" 
+                            <td width="99%"><input style="padding-left: 3px; padding-top: 2px; padding-bottom: 2px; width: 220px; border: 1px solid rgb(183,183,183); font-size: 13px; line-height: 20px" id="path-filter" 
                               value="" placeholder="Filter by type..." type="text"></td>
                             <td width="1%">
-                              <button id="endpoint-filter-btn" class="btn btn-default" style="border-left: 0px;">
+                              <button id="path-filter-btn" class="btn btn-default" style="border-left: 0px;">
                                 <i class="fa fa-fw fa-search"></i>
                               </button>
                             </td>
@@ -473,7 +473,7 @@
                           </tr>
                         </tbody>
                       </table>
-                      <button style="display: inline" class="btn btn-primary pull-right" type="button"><span class="fa fa-fw fa-plus"></span>Add Type</button>
+                      <button style="display: inline" class="btn btn-primary pull-right" type="button"><span class="fa fa-fw fa-plus"></span>Add Definition</button>
                     </div>
                     <div class="card-pf-body" style="padding-bottom: 20px;">
 
