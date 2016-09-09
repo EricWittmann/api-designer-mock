@@ -356,7 +356,7 @@
 #api-editor .api-master-resources .api-resource:hover .api-resource-action-kebab > button {
   visibility: visible;
 }
-#api-editor .api-master-resources .api-resource span.path-param {
+#api-editor span.path-param {
   font-weight: 400;
   color: #ff6a7c;
 }
