@@ -77,8 +77,23 @@
   margin-bottom: 10px;
 }
 
+.api-breadcrumbs .api-home-nav {
+  font-size: 22px;
+  padding: 0px 10px 0px 10px;
+  margin-right: 15px;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+.api-breadcrumbs .api-home-nav:hover {
+  background-color: #39a5dc;
+}
+.api-breadcrumbs .api-home-nav:hover a {
+  color: white;
+}
+
 .api-breadcrumbs .breadcrumb {
   margin-bottom: 0px;
+  float: left;
 }
 
 .api-list-items {
@@ -257,7 +272,7 @@
   background-color: #1D2225;
   color: white;
   position: absolute;
-  top: 67px;
+  top: 68px;
   left: 0px;
   right: 0px;
   bottom: 0px;
@@ -445,4 +460,44 @@
   padding: 20px;
 }
 #api-editor .api-detail .api-detail-body p {
+}
+
+#api-nav-menu-shade {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 68px;
+  bottom: 0px;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, .2);
+}
+
+#api-nav-menu-container {
+  position: absolute;
+  left: 20px;
+  top: 68px;
+  bottom: 0px;
+  width: 200px;
+  z-index: 20;
+}
+
+#api-nav-menu-container .api-nav-menu {
+  font-size: 16px;
+  background-color: white;
+}
+#api-nav-menu-container .api-nav-menu > a {
+  text-decoration: none;
+}
+#api-nav-menu-container .api-nav-menu .menu-item {
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px;
+}
+#api-nav-menu-container .api-nav-menu .menu-item:hover {
+  background-color: #39a5dc;
+  color: white;
+}
+#api-nav-menu-container .api-nav-menu .menu-item > span.fa {
+  margin-right: 5px;
 }

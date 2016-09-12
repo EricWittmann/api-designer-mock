@@ -52,8 +52,11 @@
 
     <div class="container-fluid api-breadcrumbs">
       <div class="row-fluid">
+        <ol class="breadcrumb api-home-nav">
+          <li><a id="api-nav-trigger" href="#"><span class="fa fa-fw fa-home"></span><span> </span></a></li>
+        </ol>
         <ol class="breadcrumb">
-          <li><a href="dashboard.html"><span class="fa fa-fw fa-home"></span><span>Dashboard</span></a></li>
+          <li><a href="dashboard.html"><span class="fa fa-fw fa-dashboard"></span><span>Dashboard</span></a></li>
           <li><a href="my-apis.html"><span class="fa fa-fw fa-search"></span><span>My APIs</span></a></li>
           <li class="active">
             <span class="fa fa-fw fa-bolt"></span>
@@ -63,7 +66,29 @@
         </ol>
       </div>
     </div>
-    
+
+    <div id="api-nav-menu-shade" style="display:none">
+    </div>
+    <div id="api-nav-menu-container" style="display:none">
+      <div class="api-nav-menu">
+        <a href="dashboard.html">
+          <div class="menu-item">
+            <span class="fa fa-fw fa-dashboard"></span><span>Dashboard</span>
+          </div>
+        </a>
+        <a href="my-apis.html">
+          <div class="menu-item">
+            <span class="fa fa-fw fa-bolt"></span><span>APIs</span>
+          </div>
+        </a>
+        <a href="#">
+          <div class="menu-item">
+            <span class="fa fa-fw fa-random"></span><span>Mappings</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
     <div class="container-fluid api-details">
       <div class="row-fluid">
         <!-- Left Column -->
@@ -284,6 +309,17 @@
     <script type="text/javascript">
       $(function () {
         $('[data-toggle="tooltip"]').tooltip()
+        
+        $('#api-nav-trigger').click(function() {
+        	  this.blur();
+            $('#api-nav-menu-shade').show();
+            $('#api-nav-menu-container').slideDown(500, 'swing');
+        });
+        
+        $('#api-nav-menu-shade').click(function() {
+            $('#api-nav-menu-shade').hide();
+            $('#api-nav-menu-container').hide();
+        });
       })
     </script>
 
