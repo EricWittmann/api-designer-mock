@@ -51,260 +51,369 @@
       </div>
     </nav>
 
-    <div class="container-fluid api-breadcrumbs">
-      <div class="row-fluid">
-        <ol class="breadcrumb api-home-nav">
-          <li><a id="api-nav-trigger" href="#" onclick="alert('Try this from the API Details page.')"><span class="fa fa-fw fa-navicon"></span><span> </span></a></li>
-        </ol>
-        <ol class="breadcrumb">
-          <li><a href="dashboard.html"><span class="fa fa-fw fa-dashboard"></span><span>Dashboard</span></a></li>
-          <li class="active"><span class="fa fa-fw fa-search"></span><span>My APIs</span></li>
-        </ol>
+    <div id="api-nav-menu-shade" style="display:none">
+    </div>
+    
+    <div id="api-vertical-nav">
+      <div id="api-nav-item-dashboard" class="api-nav-item">
+          <span class="fa fa-fw fa-dashboard"></span>
+          <div>Dashboard</div>
+      </div>
+      <div id="api-nav-item-apis" class="api-nav-item active">
+          <span class="fa fa-fw fa-bolt"></span>
+          <div>APIs</div>
+      </div>
+      <div id="api-nav-item-mappings" class="api-nav-item">
+          <span class="fa fa-fw fa-random"></span>
+          <div>Mappings</div>
+      </div>
+      <div class="api-nav-item-filler">
+      </div>
+    </div>
+    
+    <div id="api-vertical-nav-details" style="display:none">
+      <div id="api-nav-detail-dashboard" class="api-nav-detail-item" style="display:none">
+        <h3>Dashboard</h3>
+        <p>Click below to navigate back to the default API Designer dashboard.</p>
+        <ul>
+          <li><a href="dashboard.html">Back to Dashboard</a></li>
+        </ul>
+      </div>
+      <div id="api-nav-detail-apis" class="api-nav-detail-item" style="display:none">
+        <h3>APIs</h3>
+        <p class="description">Choose from the actions below or jump directly to one of your starred/favorited APIs.</p>
+        <h4 class="heading">API Actions</h4>
+        <div class="action">
+          <a href="my-apis.html"><span class="fa fa-fw fa-search"></span><span>List All APIs</span></a>
+        </div>
+        <div class="action">
+          <a href="new-api.html"><span class="fa fa-fw fa-plus"></span><span>New API</span></a>
+        </div>
+
+        <h4 class="heading">Starred APIs</h4>
+        <div>
+          <a href="api-details.html"><span class="fa fa-fw fa-bolt"></span><span>Gateway Configuration API</span></a>
+        </div>
+        <div>
+          <a href="api-details.html"><span class="fa fa-fw fa-bolt"></span><span>Manager API</span></a>
+        </div>
+      </div>
+      <div id="api-nav-detail-mappings" class="api-nav-detail-item" style="display:none">
+        <h3>Mappings</h3>
+        <p class="description">Choose from the actions below or jump directly to one of your starred/favorited Mappings.</p>
+        <h4 class="heading">Mapping Actions</h4>
+        <div class="action">
+          <a href="#"><span class="fa fa-fw fa-search"></span><span>List All Mappings</span></a>
+        </div>
+        <div class="action">
+          <a href="#"><span class="fa fa-fw fa-plus"></span><span>New Mapping</span></a>
+        </div>
+
+        <h4 class="heading">Starred Mappings</h4>
+        <div>
+          <a href="#"><span class="fa fa-fw fa-random"></span><span>Invoice API -> SOAP Invoices</span></a>
+        </div>
+        <div>
+          <a href="#"><span class="fa fa-fw fa-random"></span><span>Manager API -> Manager Camel Routes</span></a>
+        </div>
       </div>
     </div>
 
-    <div class="container-fluid api-list-apis">
-      <div class="row toolbar-pf">
-        <div class="col-sm-12">
-          <form class="toolbar-pf-actions">
-            <div class="form-group toolbar-pf-filter">
-              <label class="sr-only" for="filter">Name</label>
-              <div class="input-group">
-                <div class="input-group-btn">
-                  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
-                    aria-expanded="false">
-                    Name <span class="caret"></span>
+    <div id="api-page-body">
+
+      <div class="container-fluid api-breadcrumbs">
+        <div class="row-fluid">
+          <ol class="breadcrumb">
+            <li><a href="dashboard.html"><span class="fa fa-fw fa-dashboard"></span><span>Dashboard</span></a></li>
+            <li class="active"><span class="fa fa-fw fa-search"></span><span>My APIs</span></li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="container-fluid api-list-apis">
+        <div class="row toolbar-pf">
+          <div class="col-sm-12">
+            <form class="toolbar-pf-actions">
+              <div class="form-group toolbar-pf-filter">
+                <label class="sr-only" for="filter">Name</label>
+                <div class="input-group">
+                  <div class="input-group-btn">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      Name <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Name</a></li>
+                      <li><a href="#">Description</a></li>
+                    </ul>
+                  </div>
+                  <!-- /btn-group -->
+                  <input type="text" class="form-control" id="filter" placeholder="Filter By Name...">
+                </div>
+                <!-- /input-group -->
+              </div>
+              <div class="form-group">
+                <button class="btn btn-link" type="button">
+                  <span class="fa fa-sort-alpha-asc"></span>
+                </button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-danger" type="button" disabled="disabled">Delete</button>
+                <div class="dropdown btn-group  dropdown-kebab-pf">
+                  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebab" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="true">
+                    <span class="fa fa-ellipsis-v"></span>
                   </button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Name</a></li>
-                    <li><a href="#">Description</a></li>
+                  <ul class="dropdown-menu " aria-labelledby="dropdownKebab">
+                    <li><a href="#">Export</a></li>
+                    <li><a href="#">Generate Client</a></li>
+                    <li><a href="#">Bootstrap Impl</a></li>
                   </ul>
                 </div>
-                <!-- /btn-group -->
-                <input type="text" class="form-control" id="filter" placeholder="Filter By Name...">
               </div>
-              <!-- /input-group -->
-            </div>
-            <div class="form-group">
-              <button class="btn btn-link" type="button">
-                <span class="fa fa-sort-alpha-asc"></span>
-              </button>
-            </div>
-            <div class="form-group">
-              <button class="btn btn-danger" type="button" disabled="disabled">Delete</button>
-              <div class="dropdown btn-group  dropdown-kebab-pf">
-                <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebab" data-toggle="dropdown" aria-haspopup="true"
-                  aria-expanded="true">
-                  <span class="fa fa-ellipsis-v"></span>
-                </button>
-                <ul class="dropdown-menu " aria-labelledby="dropdownKebab">
-                  <li><a href="#">Export</a></li>
-                  <li><a href="#">Generate Client</a></li>
-                  <li><a href="#">Bootstrap Impl</a></li>
+              <div class="form-group">
+                <a class="btn btn-primary" href="new-api.html">New API</a>
+              </div>
+              <div class="form-group toolbar-pf-view-selector">
+                <ul class="list-inline">
+                  <li class="active"><a href="#"><i class="fa fa-th-list"></i></a></li>
+                  <li><a href="my-apis-cards.html"><i class="fa fa-th"></i></a></li>
                 </ul>
               </div>
+            </form>
+            <div class="row toolbar-pf-results">
+              <div class="col-sm-12">
+                <h5>3 Results</h5>
+                <p>Active filters:</p>
+                <ul class="list-inline">
+                  <li>
+                    <span class="label label-info"> Name: nameofthething <a href="#"><span class="pficon pficon-close"></span></a></span>
+                  </li>
+                  <li>
+                    <span class="label label-info"> Other: something <a href="#"><span class="pficon pficon-close"></span></a></span>
+                  </li>
+                </ul>
+                <p>
+                  <a href="#">Clear All Filters</a>
+                </p>
+              </div>
+              <!-- /col -->
             </div>
-            <div class="form-group">
-              <a class="btn btn-primary" href="new-api.html">New API</a>
-            </div>
-            <div class="form-group toolbar-pf-view-selector">
-              <ul class="list-inline">
-                <li class="active"><a href="#"><i class="fa fa-th-list"></i></a></li>
-                <li><a href="my-apis-cards.html"><i class="fa fa-th"></i></a></li>
-              </ul>
-            </div>
-          </form>
-          <div class="row toolbar-pf-results">
-            <div class="col-sm-12">
-              <h5>3 Results</h5>
-              <p>Active filters:</p>
-              <ul class="list-inline">
-                <li>
-                  <span class="label label-info"> Name: nameofthething <a href="#"><span class="pficon pficon-close"></span></a></span>
-                </li>
-                <li>
-                  <span class="label label-info"> Other: something <a href="#"><span class="pficon pficon-close"></span></a></span>
-                </li>
-              </ul>
-              <p>
-                <a href="#">Clear All Filters</a>
-              </p>
-            </div>
-            <!-- /col -->
+            <!-- /row -->
           </div>
-          <!-- /row -->
+          <!-- /col -->
         </div>
-        <!-- /col -->
-      </div>
-      <div class="row api-list-items">
-        <div class="col-md-12">
-          <div class="list-group list-view-pf">
-          
-            <!-- API #1 -->
-            <div class="list-group-item list-view-pf-stacked">
-              <div class="list-view-pf-checkbox">
-                <input type="checkbox">
-              </div>
-              <div class="list-view-pf-actions">
-                <div class="dropdown pull-right dropdown-kebab-pf">
-                  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight2" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="true">
-                    <span class="fa fa-ellipsis-v"></span>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight2">
-                    <li><a href="#">Delete</a></li>
-                    <li><a href="#">Export</a></li>
-                    <li><a href="#">Generate Client</a></li>
-                    <li><a href="#">Bootstrap Impl</a></li>
-                  </ul>
+        <div class="row api-list-items">
+          <div class="col-md-12">
+            <div class="list-group list-view-pf">
+            
+              <!-- API #1 -->
+              <div class="list-group-item list-view-pf-stacked">
+                <div class="list-view-pf-checkbox">
+                  <input type="checkbox">
                 </div>
-              </div>
-              <div class="list-view-pf-main-info">
-                <div class="list-view-pf-left">
-                  <span class="fa fa-plane list-view-pf-icon-sm api-deployed"></span>
-                </div>
-                <div class="list-view-pf-body">
-                  <div class="list-view-pf-description">
-                    <div class="list-group-item-heading">
-                      <a href="api-details.html">Gateway Configuration API</a>
-                    </div>
-                    <div class="list-group-item-text">Used to directly configure the API Gateway (bypassing the management layer).</div>
+                <div class="list-view-pf-actions">
+                  <div class="dropdown pull-right dropdown-kebab-pf">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight2" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="true">
+                      <span class="fa fa-ellipsis-v"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight2">
+                      <li><a href="#">Delete</a></li>
+                      <li><a href="#">Export</a></li>
+                      <li><a href="#">Generate Client</a></li>
+                      <li><a href="#">Bootstrap Impl</a></li>
+                    </ul>
                   </div>
-                  <div class="list-view-pf-additional-info">
-                    <div class="list-view-pf-additional-info-item">
-                      <a href="api-details.html">
-                        <span class="pficon pficon-service"></span><strong>3</strong><span>Paths</span>
-                      </a>
+                </div>
+                <div class="list-view-pf-main-info">
+                  <div class="list-view-pf-left">
+                    <span class="fa fa-plane list-view-pf-icon-sm api-deployed"></span>
+                  </div>
+                  <div class="list-view-pf-body">
+                    <div class="list-view-pf-description">
+                      <div class="list-group-item-heading">
+                        <a href="api-details.html">Gateway Configuration API</a>
+                      </div>
+                      <div class="list-group-item-text">Used to directly configure the API Gateway (bypassing the management layer).</div>
                     </div>
-                    <div class="list-view-pf-additional-info-item">
-                      <a href="api-details.html">
-                        <span class="fa fa-code"></span><strong>6</strong><span>Definitions</span>
-                      </a>
+                    <div class="list-view-pf-additional-info">
+                      <div class="list-view-pf-additional-info-item">
+                        <a href="api-details.html">
+                          <span class="pficon pficon-service"></span><strong>3</strong><span>Paths</span>
+                        </a>
+                      </div>
+                      <div class="list-view-pf-additional-info-item">
+                        <a href="api-details.html">
+                          <span class="fa fa-code"></span><strong>6</strong><span>Definitions</span>
+                        </a>
+                      </div>
+                      <div class="list-view-pf-additional-info-item">
+                        <span class="fa fa-random"></span><strong>0</strong><span>Mappings</span>
+                      </div>
                     </div>
-                    <div class="list-view-pf-additional-info-item">
-                      <span class="fa fa-random"></span><strong>0</strong><span>Mappings</span>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- API #2 -->
+              <div class="list-group-item list-view-pf-stacked">
+                <div class="list-view-pf-checkbox">
+                  <input type="checkbox">
+                </div>
+                <div class="list-view-pf-actions">
+                  <div class="dropdown pull-right dropdown-kebab-pf">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight2" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="true">
+                      <span class="fa fa-ellipsis-v"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight2">
+                      <li><a href="#">Delete</a></li>
+                      <li><a href="#">Export</a></li>
+                      <li><a href="#">Generate Client</a></li>
+                      <li><a href="#">Bootstrap Impl</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="list-view-pf-main-info">
+                  <div class="list-view-pf-left">
+                    <span class="fa fa-puzzle-piece list-view-pf-icon-sm"></span>
+                  </div>
+                  <div class="list-view-pf-body">
+                    <div class="list-view-pf-description">
+                      <div class="list-group-item-heading">
+                        <a href="api-details.html">Manager Configuration API</a>
+                      </div>
+                      <div class="list-group-item-text">Used to manage lifecycle of, and configure policies on, managed APIs.</div>
+                    </div>
+                    <div class="list-view-pf-additional-info">
+                      <div class="list-view-pf-additional-info-item">
+                        <a href="api-details.html">
+                          <span class="pficon pficon-service"></span><strong>24</strong><span>Paths</span>
+                        </a>
+                      </div>
+                      <div class="list-view-pf-additional-info-item">
+                        <a href="api-details.html">
+                          <span class="fa fa-code"></span><strong>32</strong><span>Definitions</span>
+                        </a>
+                      </div>
+                      <div class="list-view-pf-additional-info-item">
+                        <span class="fa fa-random"></span><strong>0</strong><span>Mappings</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- API #3 -->
+              <div class="list-group-item list-view-pf-stacked">
+                <div class="list-view-pf-checkbox">
+                  <input type="checkbox">
+                </div>
+                <div class="list-view-pf-actions">
+                  <div class="dropdown pull-right dropdown-kebab-pf">
+                    <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight" data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="true">
+                      <span class="fa fa-ellipsis-v"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight">
+                      <li><a href="#">Delete</a></li>
+                      <li><a href="#">Export</a></li>
+                      <li><a href="#">Generate Client</a></li>
+                      <li><a href="#">Bootstrap Impl</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="list-view-pf-main-info">
+                  <div class="list-view-pf-left">
+                    <span class="fa fa-filter list-view-pf-icon-sm"></span>
+                  </div>
+                  <div class="list-view-pf-body">
+                    <div class="list-view-pf-description">
+                      <div class="list-group-item-heading">
+                        <a href="api-details.html">Rate Limiting API</a>
+                      </div>
+                      <div class="list-group-item-text">An API that allows consumers to manage large numbers of individual rate limits.</div>
+                    </div>
+                    <div class="list-view-pf-additional-info">
+                      <div class="list-view-pf-additional-info-item">
+                        <a href="api-details.html">
+                          <span class="pficon pficon-service"></span><strong>2</strong><span>Paths</span>
+                        </a>
+                      </div>
+                      <div class="list-view-pf-additional-info-item">
+                        <a href="api-details.html">
+                          <span class="fa fa-code"></span><strong>8</strong><span>Definitions</span>
+                        </a>
+                      </div>
+                      <div class="list-view-pf-additional-info-item">
+                        <span class="fa fa-random"></span><strong>2</strong><span>Mappings</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            
-            <!-- API #2 -->
-            <div class="list-group-item list-view-pf-stacked">
-              <div class="list-view-pf-checkbox">
-                <input type="checkbox">
-              </div>
-              <div class="list-view-pf-actions">
-                <div class="dropdown pull-right dropdown-kebab-pf">
-                  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight2" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="true">
-                    <span class="fa fa-ellipsis-v"></span>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight2">
-                    <li><a href="#">Delete</a></li>
-                    <li><a href="#">Export</a></li>
-                    <li><a href="#">Generate Client</a></li>
-                    <li><a href="#">Bootstrap Impl</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="list-view-pf-main-info">
-                <div class="list-view-pf-left">
-                  <span class="fa fa-puzzle-piece list-view-pf-icon-sm"></span>
-                </div>
-                <div class="list-view-pf-body">
-                  <div class="list-view-pf-description">
-                    <div class="list-group-item-heading">
-                      <a href="api-details.html">Manager Configuration API</a>
-                    </div>
-                    <div class="list-group-item-text">Used to manage lifecycle of, and configure policies on, managed APIs.</div>
-                  </div>
-                  <div class="list-view-pf-additional-info">
-                    <div class="list-view-pf-additional-info-item">
-                      <a href="api-details.html">
-                        <span class="pficon pficon-service"></span><strong>24</strong><span>Paths</span>
-                      </a>
-                    </div>
-                    <div class="list-view-pf-additional-info-item">
-                      <a href="api-details.html">
-                        <span class="fa fa-code"></span><strong>32</strong><span>Definitions</span>
-                      </a>
-                    </div>
-                    <div class="list-view-pf-additional-info-item">
-                      <span class="fa fa-random"></span><strong>0</strong><span>Mappings</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
-            <!-- API #3 -->
-            <div class="list-group-item list-view-pf-stacked">
-              <div class="list-view-pf-checkbox">
-                <input type="checkbox">
-              </div>
-              <div class="list-view-pf-actions">
-                <div class="dropdown pull-right dropdown-kebab-pf">
-                  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebabRight" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="true">
-                    <span class="fa fa-ellipsis-v"></span>
-                  </button>
-                  <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownKebabRight">
-                    <li><a href="#">Delete</a></li>
-                    <li><a href="#">Export</a></li>
-                    <li><a href="#">Generate Client</a></li>
-                    <li><a href="#">Bootstrap Impl</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="list-view-pf-main-info">
-                <div class="list-view-pf-left">
-                  <span class="fa fa-filter list-view-pf-icon-sm"></span>
-                </div>
-                <div class="list-view-pf-body">
-                  <div class="list-view-pf-description">
-                    <div class="list-group-item-heading">
-                      <a href="api-details.html">Rate Limiting API</a>
-                    </div>
-                    <div class="list-group-item-text">An API that allows consumers to manage large numbers of individual rate limits.</div>
-                  </div>
-                  <div class="list-view-pf-additional-info">
-                    <div class="list-view-pf-additional-info-item">
-                      <a href="api-details.html">
-                        <span class="pficon pficon-service"></span><strong>2</strong><span>Paths</span>
-                      </a>
-                    </div>
-                    <div class="list-view-pf-additional-info-item">
-                      <a href="api-details.html">
-                        <span class="fa fa-code"></span><strong>8</strong><span>Definitions</span>
-                      </a>
-                    </div>
-                    <div class="list-view-pf-additional-info-item">
-                      <span class="fa fa-random"></span><strong>2</strong><span>Mappings</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
           </div>
         </div>
-        
-        <script>
-          // Row Checkbox Selection
-          $(document).ready(function () {
-            $("input[type='checkbox']").change(function (e) {
-              if ($(this).is(":checked")) {
-                $(this).closest('.list-group-item').addClass("active");
-              } else {
-                $(this).closest('.list-group-item').removeClass("active");
-              }
-            });
-          });
-        </script>
-
       </div>
     </div>
+
+    <script>
+      // Row Checkbox Selection
+      $(document).ready(function () {
+        $("input[type='checkbox']").change(function (e) {
+          if ($(this).is(":checked")) {
+            $(this).closest('.list-group-item').addClass("active");
+          } else {
+            $(this).closest('.list-group-item').removeClass("active");
+          }
+        });
+      });
+    </script>
+
+    <script type="text/javascript">
+      $(function () {
+        
+        // api-nav-item-dashboard api-nav-item-apis api-nav-item-mappings
+        // api-nav-detail-dashboard api-nav-detail-apis api-nav-detail-mappings
+
+        $('#api-nav-item-dashboard').click(function() {
+            $('#api-nav-menu-shade').show();
+            $(this).siblings().removeClass('selected');
+            $(this).addClass('selected');
+            $('#api-nav-detail-dashboard').siblings().hide();
+            $('#api-nav-detail-dashboard').show();
+            $('#api-vertical-nav-details').show();
+        });
+
+        $('#api-nav-item-apis').click(function() {
+            $('#api-nav-menu-shade').show();
+            $(this).siblings().removeClass('selected');
+            $(this).addClass('selected');
+            $('#api-nav-detail-apis').siblings().hide();
+            $('#api-nav-detail-apis').show();
+            $('#api-vertical-nav-details').show();
+        });
+
+        $('#api-nav-item-mappings').click(function() {
+            $('#api-nav-menu-shade').show();
+            $(this).siblings().removeClass('selected');
+            $(this).addClass('selected');
+            $('#api-nav-detail-mappings').siblings().hide();
+            $('#api-nav-detail-mappings').show();
+            $('#api-vertical-nav-details').show();
+        });
+        
+        $('#api-nav-menu-shade').click(function() {
+            $('#api-nav-menu-shade').hide();
+            $('#api-vertical-nav-details').hide();
+            $('#api-nav-item-dashboard').removeClass('selected');
+            $('#api-nav-item-dashboard').siblings().removeClass('selected');
+        });
+      })
+    </script>
+
   </body>
 
 </html>
