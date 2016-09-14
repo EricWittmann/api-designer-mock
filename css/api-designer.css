@@ -102,48 +102,6 @@
   background-color: rgb(221, 234, 255);
 }
 
-.api-editor {
-}
-
-.api-editor .api-editor-nav-vertical {
-  position: fixed;
-  top: 73px;
-}
-
-.api-editor .api-editor-body {
-}
-
-.api-editor .api-editor-body #api-editor-source {
-  height: auto;
-  position: fixed;
-  top: 113px;
-  bottom: 0px;
-  left: 20px;
-  right: 50%;
-  overflow: auto;
-}
-.api-editor .api-editor-body .api-editor-docs {
-  position: fixed;
-  top: 113px;
-  bottom: 0px;
-  left: 51%;
-  right: 0px;
-}
-
-
-.api-editor .api-editor-body .container-cards-pf {
-  padding-top: 20px;
-  margin-top: 0px;
-}
-
-.api-editor .api-editor-overview .api-editor-card .card-pf-heading .card-pf-title {
-  font-size: 16px;
-}
-
-.api-editor .api-editor-card .card-pf-link-with-icon .fa {
-  font-size: 15px;
-}
-
 .api-breadcrumbs {
   background: white;
   border-bottom: 1px solid #ccc;
@@ -269,34 +227,6 @@
   padding-bottom: 5px;
 }
 
-#api-editor .api-path .api-path-detail .nav-tabs-pf li.active a {
-  font-weight: bold;
-}
-#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-get a {
-  color: green;
-}
-#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-get a::before {
-  background: green !important;
-}
-#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-put a {
-  color: orange;
-}
-#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-put a::before {
-  background: orange !important;
-}
-#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-post a {
-  color: orange;
-}
-#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-post a::before {
-  background: orange !important;
-}
-#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-del a {
-  color: red;
-}
-#api-editor .api-path .api-path-detail .nav-tabs-pf li.active.tab-del a::before {
-  background: red !important;
-}
-
 #api-editor .api-path .api-path-detail h1 {
   font-size: 14px;
   font-weight: bold;
@@ -325,10 +255,6 @@
 #api-editor .api-path-parameters td.icons i:hover {
   cursor: pointer;
   color: #321;
-}
-#api-editor .api-path-parameters td.description {
-}
-#api-editor .api-path-parameters td.type {
 }
 
 #api-editor .api-response .tlabel {
