@@ -122,27 +122,32 @@
 
     <div id="api-page-body">
   
-      <div class="container-fluid api-breadcrumbs">
-        <div class="row-fluid">
-          <ol class="breadcrumb">
-            <li><a href="dashboard.html"><span class="fa fa-fw fa-dashboard"></span><span>Dashboard</span></a></li>
-            <li><a href="my-apis.html"><span class="fa fa-fw fa-search"></span><span>My APIs</span></a></li>
-            <li class="active">
-              <a href="api-details.html">
-                <span class="fa fa-fw fa-bolt"></span>
-                <span>API:</span>
-                <strong>Gateway Configuration API</strong>
-              </a>
-            </li>
-            <li class="active">
-              <span class="fa fa-fw fa-pencil"></span>
-              <span>Designer</span>
-            </li>
-          </ol>
+      <div class="" style="background-color: white; float: left; width: 100%; border-bottom: 1px solid #ddd">
+        <div class="container-fluid api-breadcrumbs" style="float:left; border-bottom: 0px; margin-bottom: 0px">
+          <div class="row-fluid">
+            <ol class="breadcrumb">
+              <li><a href="dashboard.html"><span class="fa fa-fw fa-dashboard"></span><span>Dashboard</span></a></li>
+              <li><a href="my-apis.html"><span class="fa fa-fw fa-search"></span><span>My APIs</span></a></li>
+              <li class="active">
+                <a href="api-details.html">
+                  <span class="fa fa-fw fa-bolt"></span>
+                  <span>API:</span>
+                  <strong>Gateway Configuration API</strong>
+                </a>
+              </li>
+              <li class="active">
+                <span class="fa fa-fw fa-pencil"></span>
+                <span>Designer</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="pull-right">
+          <button id="theme-toggle" class="btn btn-sm btn-default" style="margin-top: 7px; margin-right: 15px;">Use Dark Theme</button>
         </div>
       </div>
   
-      <div class="api-editor" id="api-editor">
+      <div class="api-editor light" id="api-editor">
       
         <div class="api-master-top active">
           <a href="#" onclick="blur(); selectTop();">
@@ -565,6 +570,11 @@
             $('#api-vertical-nav-details').hide();
             $('#api-nav-item-dashboard').removeClass('selected');
             $('#api-nav-item-dashboard').siblings().removeClass('selected');
+        });
+        
+        $('#theme-toggle').click(function() {
+          $('#api-editor').removeClass('light');
+          $('#api-editor').addClass('dark');
         });
       })
     </script>

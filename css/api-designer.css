@@ -227,6 +227,266 @@
   padding-bottom: 5px;
 }
 
+#api-editor {
+  position: absolute;
+  top: 67px;
+  left: 120px;
+  right: 0px;
+  bottom: 0px;
+}
+#api-editor.light {
+  color: #333;
+  background-color: white;
+}
+#api-editor.dark {
+  color: white;
+  background-color: #1D2225;
+}
+#api-editor .api-master-top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 70%;
+  height: 50px;
+  overflow: hidden;
+  border-left: 4px solid transparent;
+}
+#api-editor.light .api-master-top {
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+#api-editor.dark .api-master-top {
+  background-color: black;
+  border-bottom: 1px solid #333;
+}
+#api-editor .api-master-top a {
+  text-decoration: none;
+}
+#api-editor.light .api-master-top a {
+  color: #333;
+}
+#api-editor.dark .api-master-top a {
+  color: white;
+}
+#api-editor.light .api-master-top:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+#api-editor.dark .api-master-top:hover {
+  background-color: #222;
+}
+#api-editor .api-master-top.active {
+  border-left: 4px solid rgb(0, 136, 206);
+  background-color: rgba(101,109,115,.25);
+}
+#api-editor .api-master-top p {
+  font-size: 22px;
+  padding: 6px;
+  padding-left: 10px;
+  margin: 0;
+}
+
+#api-editor .api-master-resources {
+  position: absolute;
+  top: 46px;
+  left: 0px;
+  bottom: 40%;
+  right: 70%;
+  overflow-y: auto;
+  padding-top: 6px;
+}
+#api-editor.light .api-master-resources {
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+#api-editor.dark .api-master-resources {
+  border-bottom: 1px solid #333;
+}
+#api-editor .api-master-resources .api-resource-filter {
+  padding: 8px;
+}
+#api-editor.light .api-master-resources .api-resource-filter {
+  border-bottom: 1px solid #ddd;
+}
+#api-editor.dark .api-master-resources .api-resource-filter {
+  border-bottom: 1px solid #333;
+}
+#api-editor .api-master-resources .api-resource-filter .pficon {
+  margin-left: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+  display: inline;
+}
+#api-editor .api-master-resources .api-resource-filter .search-box {
+  border: 0px;
+  padding: 5px;
+  width: 70%;
+}
+#api-editor.light .api-master-resources .api-resource-filter .search-box {
+  background-color: #ddd;
+  color: #333;
+}
+#api-editor.dark .api-master-resources .api-resource-filter .search-box {
+  background-color: #333;
+  color: white;
+}
+#api-editor .api-master-resources .api-resource-filter .dropdown-kebab-pf button {
+  margin-right: 11px;
+}
+#api-editor.light .api-master-resources .api-resource-filter .dropdown-kebab-pf button {
+  color: #333;
+}
+#api-editor.dark .api-master-resources .api-resource-filter .dropdown-kebab-pf button {
+  color: white;
+}
+#api-editor .api-master-resources .api-resource {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 24px;
+}
+#api-editor.light .api-master-resources .api-resource {
+  color: #333;
+}
+#api-editor.dark .api-master-resources .api-resource {
+  color: white;
+}
+#api-editor .api-master-resources .api-resource > div {
+  border-left: 4px solid transparent;
+  padding-left: 10px;
+}
+#api-editor.light .api-master-resources .api-resource:hover > div {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#api-editor.dark .api-master-resources .api-resource:hover > div {
+  background-color: #333;
+}
+#api-editor .api-master-resources .api-resource.active > div {
+  border-left: 4px solid rgb(0, 136, 206);
+  background-color: rgba(101,109,115,.25);
+}
+#api-editor .api-master-resources .api-resource .api-resource-action-kebab {
+  margin-right: 15px;
+  
+}
+#api-editor .api-master-resources .api-resource .api-resource-action-kebab > button {
+  font-size: 16px;
+  padding: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 0px;
+  visibility: hidden;
+}
+#api-editor.light .api-master-resources .api-resource .api-resource-action-kebab > button {
+  color: #333;
+}
+#api-editor.dark .api-master-resources .api-resource .api-resource-action-kebab > button {
+  color: white;
+}
+#api-editor .api-master-resources .api-resource:hover .api-resource-action-kebab > button {
+  visibility: visible;
+}
+#api-editor span.path-param {
+  font-weight: 400;
+  color: #ff6a7c;
+}
+
+#api-editor .api-master-definitions {
+  position: absolute;
+  top: 60%;
+  left: 0px;
+  bottom: 0px;
+  right: 70%;
+  overflow-y: auto;
+}
+#api-editor.light .api-master-definitions {
+  border-right: 1px solid #ddd;
+}
+#api-editor.dark .api-master-definitions {
+}
+#api-editor .api-master-definitions .api-definition-filter {
+  padding: 8px;
+  border-bottom: 1px solid #333;
+}
+#api-editor.light .api-master-definitions .api-definition-filter {
+  border-bottom: 1px solid #ddd;
+}
+#api-editor.dark .api-master-definitions .api-definition-filter {
+  border-bottom: 1px solid #333;
+}
+#api-editor .api-master-definitions .api-definition-filter > .fa {
+  margin-left: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+  display: inline;
+}
+#api-editor .api-master-definitions .api-definition-filter .search-box {
+  border: 0px;
+  padding: 5px;
+  width: 70%;
+}
+#api-editor.light .api-master-definitions .api-definition-filter .search-box {
+  background-color: #ddd;
+  color: #333;
+}
+#api-editor.dark .api-master-definitions .api-definition-filter .search-box {
+  background-color: #333;
+  color: white;
+}
+#api-editor .api-master-definitions .api-definition-filter .dropdown-kebab-pf button {
+  margin-right: 11px;
+}
+#api-editor.light .api-master-definitions .api-definition-filter .dropdown-kebab-pf button {
+  color: #333;
+}
+#api-editor.dark .api-master-definitions .api-definition-filter .dropdown-kebab-pf button {
+  color: white;
+}
+#api-editor .api-master-definitions .api-definition {
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 24px;
+}
+#api-editor.light .api-master-definitions .api-definition {
+  color: #333;
+}
+#api-editor.dark .api-master-definitions .api-definition {
+  color: white;
+}
+#api-editor .api-master-definitions .api-definition > div {
+  border-left: 4px solid transparent;
+  padding-left: 10px;
+}
+#api-editor .api-master-definitions .api-definition:hover > div {
+}
+#api-editor.light .api-master-definitions .api-definition:hover > div {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+#api-editor.dark .api-master-definitions .api-definition:hover > div {
+  background-color: #333;
+}
+#api-editor .api-master-definitions .api-definition .api-definition-action-kebab {
+  margin-right: 15px;
+  
+}
+#api-editor .api-master-definitions .api-definition .api-definition-action-kebab > button {
+  font-size: 16px;
+  padding: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 0px;
+  visibility: hidden;
+}
+#api-editor.light .api-master-definitions .api-definition .api-definition-action-kebab > button {
+  color: #333;
+}
+#api-editor.dark .api-master-definitions .api-definition .api-definition-action-kebab > button {
+  color: white;
+}
+#api-editor .api-master-definitions .api-definition:hover .api-definition-action-kebab > button {
+  visibility: visible;
+}
+
 #api-editor .api-path .api-path-detail h1 {
   font-size: 14px;
   font-weight: bold;
@@ -254,7 +514,12 @@
 }
 #api-editor .api-path-parameters td.icons i:hover {
   cursor: pointer;
+}
+#api-editor.light .api-path-parameters td.icons i:hover {
   color: #321;
+}
+#api-editor.dark .api-path-parameters td.icons i:hover {
+  color: #ddd;
 }
 
 #api-editor .api-response .tlabel {
@@ -264,174 +529,12 @@
 }
 #api-editor .api-response .tlabel span {
   font-weight: bold;
+}
+#api-editor.light .api-response .tlabel span {
   color: #666;
 }
-
-#api-editor {
-  background-color: #1D2225;
-  color: white;
-  position: absolute;
-  top: 67px;
-  left: 120px;
-  right: 0px;
-  bottom: 0px;
-}
-
-#api-editor .api-master-top {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 70%;
-  height: 50px;
-  background-color: black;
-  overflow: hidden;
-  border-bottom: 1px solid #333;
-  border-left: 4px solid transparent;
-}
-#api-editor .api-master-top a {
-  color: white;
-  text-decoration: none;
-}
-#api-editor .api-master-top:hover {
-  background-color: #222;
-}
-#api-editor .api-master-top.active {
-  border-left: 4px solid rgb(0, 136, 206);
-  background-color: rgba(101,109,115,.25);
-}
-#api-editor .api-master-top p {
-  font-size: 22px;
-  padding: 6px;
-  padding-left: 10px;
-  margin: 0;
-}
-
-#api-editor .api-master-resources {
-  position: absolute;
-  top: 46px;
-  left: 0px;
-  bottom: 40%;
-  right: 70%;
-  border-bottom: 1px solid #333;
-  overflow-y: auto;
-  padding-top: 6px;
-}
-#api-editor .api-master-resources .api-resource-filter {
-  padding: 8px;
-  border-bottom: 1px solid #333;
-}
-#api-editor .api-master-resources .api-resource-filter .pficon {
-  margin-left: 5px;
-  margin-right: 10px;
-  font-size: 16px;
-  display: inline;
-}
-#api-editor .api-master-resources .api-resource-filter .search-box {
-  background-color: #333;
-  border: 0px;
-  color: white;
-  padding: 5px;
-  width: 70%;
-}
-#api-editor .api-master-resources .api-resource-filter .dropdown-kebab-pf button {
-  color: white;
-  margin-right: 11px;
-}
-#api-editor .api-master-resources .api-resource {
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-  line-height: 24px;
-}
-#api-editor .api-master-resources .api-resource > div {
-  border-left: 4px solid transparent;
-  padding-left: 10px;
-}
-#api-editor .api-master-resources .api-resource:hover > div {
-  background-color: #333;
-}
-#api-editor .api-master-resources .api-resource.active > div {
-  border-left: 4px solid rgb(0, 136, 206);
-  background-color: rgba(101,109,115,.25);
-}
-#api-editor .api-master-resources .api-resource .api-resource-action-kebab {
-  margin-right: 15px;
-  
-}
-#api-editor .api-master-resources .api-resource .api-resource-action-kebab > button {
-  color: white;
-  font-size: 16px;
-  padding: 0px;
-  padding-left: 4px;
-  padding-right: 4px;
-  margin: 0px;
-  visibility: hidden;
-}
-#api-editor .api-master-resources .api-resource:hover .api-resource-action-kebab > button {
-  visibility: visible;
-}
-#api-editor span.path-param {
-  font-weight: 400;
-  color: #ff6a7c;
-}
-
-#api-editor .api-master-definitions {
-  position: absolute;
-  top: 60%;
-  left: 0px;
-  bottom: 0px;
-  right: 70%;
-  overflow-y: auto;
-}
-#api-editor .api-master-definitions .api-definition-filter {
-  padding: 8px;
-  border-bottom: 1px solid #333;
-}
-#api-editor .api-master-definitions .api-definition-filter > .fa {
-  margin-left: 5px;
-  margin-right: 10px;
-  font-size: 16px;
-  display: inline;
-}
-#api-editor .api-master-definitions .api-definition-filter .search-box {
-  background-color: #333;
-  border: 0px;
-  color: white;
-  padding: 5px;
-  width: 70%;
-}
-#api-editor .api-master-definitions .api-definition-filter .dropdown-kebab-pf button {
-  color: white;
-  margin-right: 11px;
-}
-#api-editor .api-master-definitions .api-definition {
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-  line-height: 24px;
-}
-#api-editor .api-master-definitions .api-definition > div {
-  border-left: 4px solid transparent;
-  padding-left: 10px;
-}
-#api-editor .api-master-definitions .api-definition:hover > div {
-  background-color: #333;
-}
-#api-editor .api-master-definitions .api-definition .api-definition-action-kebab {
-  margin-right: 15px;
-  
-}
-#api-editor .api-master-definitions .api-definition .api-definition-action-kebab > button {
-  color: white;
-  font-size: 16px;
-  padding: 0px;
-  padding-left: 4px;
-  padding-right: 4px;
-  margin: 0px;
-  visibility: hidden;
-}
-#api-editor .api-master-definitions .api-definition:hover .api-definition-action-kebab > button {
-  visibility: visible;
+#api-editor.dark .api-response .tlabel span {
+  color: #ccc;
 }
 
 
@@ -442,14 +545,40 @@
   right: 0px;
   bottom: 0px;
   background-color: white;
-  color: #333;
   overflow-y: auto;
 }
+#api-editor.light .api-detail {
+  color: #333;
+}
+#api-editor.dark .api-detail {
+  color: #dde;
+  background-color: #333;
+}
+#api-editor.dark .api-detail select {
+  background-color: #333;
+  border: 1px solid #999;
+}
+
+#api-editor.dark .api-detail .table-striped > tbody > tr:nth-of-type(2n) {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+#api-editor.dark .api-detail .table > thead > tr > th, #api-editor.dark .api-detail .table > tbody > tr > th, #api-editor.dark .api-detail .table > tfoot > tr > th, #api-editor.dark .api-detail .table > thead > tr > td, #api-editor.dark .api-detail .table > tbody > tr > td, #api-editor.dark .api-detail .table > tfoot > tr > td {
+  border-top: 1px solid #555;
+}
+
+
 #api-editor .api-detail .api-detail-title {
-  padding: 15px;
+  padding: 10px;
+  box-shadow: 0px 2px 3px #ccc;
+  height: 50px;
+}
+#api-editor.light .api-detail .api-detail-title {
   border-bottom: 1px solid #ccc;
   background-color: #fafafa;
-  box-shadow: 0px 2px 3px #ccc;
+}
+#api-editor.dark .api-detail .api-detail-title {
+  border-bottom: 1px solid #666;
+  background-color: #212;
 }
 #api-editor .api-detail .api-detail-title h1 {
   padding: 0px;
@@ -459,6 +588,13 @@
   padding: 20px;
 }
 #api-editor .api-detail .api-detail-body p {
+}
+#api-editor .api-detail .api-detail-body h2 {
+  font-size: 17px;
+  font-weight: bold;
+}
+#api-editor .api-detail .api-detail-body hr {
+  border-top: 1px solid #555;
 }
 
 #api-nav-menu-shade {
