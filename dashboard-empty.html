@@ -18,9 +18,10 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/js/patternfly.min.js"></script>
     <script type="text/javascript" src="js/api-designer.js"></script>
+    <script type="text/javascript" src="js/main-nav.js"></script>
   </head>
 
-  <body class="">
+  <body class="cards-pf">
     <nav class="navbar navbar-default navbar-pf" role="navigation">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
@@ -50,25 +51,132 @@
       </div>
     </nav>
 
-    <div class="container-fluid">
-      <div class="row" style="min-height: 35px"></div>
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <div class="blank-slate-pf">
-            <div class="blank-slate-pf-icon">
-              <span class="pficon pficon pficon-add-circle-o"></span>
+    <div id="api-nav-menu-shade" style="display:none">
+    </div>
+    
+    <div id="api-vertical-nav">
+      <div id="api-nav-item-dashboard" class="api-nav-item active">
+          <span class="fa fa-fw fa-dashboard"></span>
+          <div>Dashboard</div>
+      </div>
+      <div id="api-nav-item-apis" class="api-nav-item">
+          <span class="fa fa-fw fa-bolt"></span>
+          <div>APIs</div>
+      </div>
+      <div id="api-nav-item-mappings" class="api-nav-item">
+          <span class="fa fa-fw fa-random"></span>
+          <div>Mappings</div>
+      </div>
+      <div class="api-nav-item-filler">
+      </div>
+    </div>
+    
+    <div id="api-vertical-nav-details" style="display:none">
+      <div id="api-nav-detail-dashboard" class="api-nav-detail-item" style="display:none">
+        <h3>Dashboard</h3>
+        <p>Click below to navigate back to the default API Designer dashboard.</p>
+        <ul>
+          <li><a href="dashboard.html">Back to Dashboard</a></li>
+        </ul>
+      </div>
+      <div id="api-nav-detail-apis" class="api-nav-detail-item" style="display:none">
+        <h3>APIs</h3>
+        <p class="description">Choose from the actions below or jump directly to one of your starred/favorited APIs.</p>
+        <h4 class="heading">API Actions</h4>
+        <div class="action">
+          <a href="my-apis.html"><span class="fa fa-fw fa-search"></span><span>List All APIs</span></a>
+        </div>
+        <div class="action">
+          <a href="new-api.html"><span class="fa fa-fw fa-plus"></span><span>New API</span></a>
+        </div>
+
+        <h4 class="heading">Starred APIs</h4>
+        <div>
+          <a href="api-details.html"><span class="fa fa-fw fa-bolt"></span><span>Gateway Configuration API</span></a>
+        </div>
+        <div>
+          <a href="api-details.html"><span class="fa fa-fw fa-bolt"></span><span>Manager API</span></a>
+        </div>
+      </div>
+      <div id="api-nav-detail-mappings" class="api-nav-detail-item" style="display:none">
+        <h3>Mappings</h3>
+        <p class="description">Choose from the actions below or jump directly to one of your starred/favorited Mappings.</p>
+        <h4 class="heading">Mapping Actions</h4>
+        <div class="action">
+          <a href="#"><span class="fa fa-fw fa-search"></span><span>List All Mappings</span></a>
+        </div>
+        <div class="action">
+          <a href="#"><span class="fa fa-fw fa-plus"></span><span>New Mapping</span></a>
+        </div>
+
+        <h4 class="heading">Starred Mappings</h4>
+        <div>
+          <a href="#"><span class="fa fa-fw fa-random"></span><span>Invoice API -> SOAP Invoices</span></a>
+        </div>
+        <div>
+          <a href="#"><span class="fa fa-fw fa-random"></span><span>Manager API -> Manager Camel Routes</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="api-page-body">
+      <div class="container-fluid">
+        <div class="row" style="min-height: 35px"></div>
+        <div class="row row-cards-pf">
+    
+          <div class="col-xs-12 col-sm-6">
+            <div class="card-pf card-pf-accented">
+              <div class="card-pf-heading">
+                <h2 class="card-pf-title">
+                  <span class="fa fa-fw fa-comment"></span>
+                  <span>Welcome to the <strong>API Designer</strong> Dashboard!</span>
+                </h2>
+              </div>
+              <div class="card-pf-body">
+                <p>
+                  Hey <strong>Tom</strong>, thanks for logging into the <strong>API Designer</strong> studio.  Hopefully
+                  you're finding it easy to use this tool to design and collaborate on new (and existing) APIs.
+                </p>
+                <div>
+                  <ul>
+                    <li><a href="#">A link to the project goes here</a></li>
+                    <li><a href="#">Maybe a link to documentation?</a></li>
+                    <li><a href="#">Getting Started with the API Studio!</a></li>
+                  </ul>
+                </div>
+              </div>
             </div>
-            <h1>No APIs Found!</h1>
-            <p>
-              We couldn't find any APIs for you.  Probably this is your first time using the tool, so
-              welcome to the <b>API Designer</b>, we are very glad you're here!
-            </p>
-            <p>
-              In order to get started, click the <b>New API</b> button below.
-            </p>
-            <div class="blank-slate-pf-main-action">
-              <a class="btn btn-primary btn-lg" href="new-api.html">New API</a>
+          </div>
+        </div>
+        <div class="row row-cards-pf">
+
+          <div class="col-xs-12 col-sm-6">
+            <div class="blank-slate-pf">
+              <div class="blank-slate-pf-icon">
+                <span class="pficon pficon pficon-add-circle-o"></span>
+              </div>
+              <h1>No APIs Found!</h1>
+              <p>
+                We couldn't find any APIs for you.  In order to get started, click the <b>New API</b> button below.
+              </p>
+              <div class="blank-slate-pf-main-action">
+                <a class="btn btn-primary btn-lg" href="new-api.html">New API</a>
+              </div>
+            </div>
+          </div>
+    
+          <div class="col-xs-12 col-sm-6">
+            <div class="blank-slate-pf">
+              <div class="blank-slate-pf-icon">
+                <span class="pficon pficon pficon-add-circle-o"></span>
+              </div>
+              <h1>No Mappings Found!</h1>
+              <p>
+                We couldn't find any Mappings for you.  In order to get started, click the <b>New Mapping</b> button below.
+              </p>
+              <div class="blank-slate-pf-main-action">
+                <a class="btn btn-primary btn-lg" href="new-api.html">New Mapping</a>
+              </div>
             </div>
           </div>
         </div>

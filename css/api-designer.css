@@ -9,6 +9,12 @@
   color: gold;
 }
 
+.row-cards-pf .blank-slate-pf {
+  background-color: white;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
 #api-vertical-nav {
   position: absolute;
   left: 0px;

@@ -19,6 +19,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/js/patternfly.min.js"></script>
     <script type="text/javascript" src="js/api-designer.js"></script>
+    <script type="text/javascript" src="js/main-nav.js"></script>
   </head>
 
   <body class="cards-pf">
@@ -329,48 +330,6 @@
       </div>
     </div>
 
-    <script type="text/javascript">
-      $(function () {
-        
-        // api-nav-item-dashboard api-nav-item-apis api-nav-item-mappings
-        // api-nav-detail-dashboard api-nav-detail-apis api-nav-detail-mappings
-
-        $('#api-nav-item-dashboard').click(function() {
-            $('#api-nav-menu-shade').show();
-            $(this).siblings().removeClass('selected');
-            $(this).addClass('selected');
-            $('#api-nav-detail-dashboard').siblings().hide();
-            $('#api-nav-detail-dashboard').show();
-            $('#api-vertical-nav-details').show();
-        });
-
-        $('#api-nav-item-apis').click(function() {
-            $('#api-nav-menu-shade').show();
-            $(this).siblings().removeClass('selected');
-            $(this).addClass('selected');
-            $('#api-nav-detail-apis').siblings().hide();
-            $('#api-nav-detail-apis').show();
-            $('#api-vertical-nav-details').show();
-        });
-
-        $('#api-nav-item-mappings').click(function() {
-            $('#api-nav-menu-shade').show();
-            $(this).siblings().removeClass('selected');
-            $(this).addClass('selected');
-            $('#api-nav-detail-mappings').siblings().hide();
-            $('#api-nav-detail-mappings').show();
-            $('#api-vertical-nav-details').show();
-        });
-        
-        $('#api-nav-menu-shade').click(function() {
-            $('#api-nav-menu-shade').hide();
-            $('#api-vertical-nav-details').hide();
-            $('#api-nav-item-dashboard').removeClass('selected');
-            $('#api-nav-item-dashboard').siblings().removeClass('selected');
-        });
-      })
-    </script>
-    
   </body>
 
 </html>
