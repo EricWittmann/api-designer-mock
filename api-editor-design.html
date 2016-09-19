@@ -9,9 +9,10 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/api-designer.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/css/patternfly-additions.css">
+    <link rel="stylesheet/less" type="text/css" href="css/api-designer.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/api-editor.less" />
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -19,6 +20,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.7.0/js/patternfly.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.4/ace.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
     <script type="text/javascript" src="js/api-designer.js"></script>
     <script type="text/javascript" src="js/main-nav.js"></script>
   </head>
@@ -444,7 +446,7 @@
                       Retires a previously published API from the Gateway, immediately making
                       the API unavailable for consumption.
                     </p>
-                    <hr/>
+                    <hr />
                     <h2>Parameters</h2>
                     <table class="table table-striped api-path-parameters">
                       <tr>
@@ -518,6 +520,20 @@
       	  $('.api-master-top').removeClass('active');
       	  $('#the-api-resource').addClass('active');
       }
+      
+      $(function () {
+        $('#theme-toggle').click(function() {
+          if ($('#api-editor').hasClass('light')) {
+            $('#api-editor').removeClass('light');
+            $('#api-editor').addClass('dark');
+            $(this).text('Use Light Theme');
+          } else {
+            $('#api-editor').removeClass('dark');
+            $('#api-editor').addClass('light');
+            $(this).text('Use Dark Theme');
+          }
+        });
+      })
     </script>
     
   </body>

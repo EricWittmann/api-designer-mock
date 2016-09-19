@@ -1,0 +1,290 @@
+#api-editor {
+  position: absolute;
+  top: 67px;
+  left: 120px;
+  right: 0px;
+  bottom: 0px;
+}
+#api-editor .api-master-top {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 70%;
+  height: 50px;
+  overflow: hidden;
+  border-left: 4px solid transparent;
+}
+#api-editor .api-master-top a {
+  text-decoration: none;
+}
+#api-editor .api-master-top.active {
+  border-left: 4px solid rgb(0, 136, 206);
+  background-color: rgba(101,109,115,.25);
+}
+#api-editor .api-master-top p {
+  font-size: 22px;
+  padding: 6px;
+  padding-left: 10px;
+  margin: 0;
+}
+
+#api-editor .api-master-resources {
+  position: absolute;
+  top: 46px;
+  left: 0px;
+  bottom: 40%;
+  right: 70%;
+  overflow-y: auto;
+  padding-top: 6px;
+}
+#api-editor .api-master-resources .api-resource-filter {
+  padding: 8px;
+}
+#api-editor .api-master-resources .api-resource-filter .pficon {
+  margin-left: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+  display: inline;
+}
+#api-editor .api-master-resources .api-resource-filter .search-box {
+  border: 0px;
+  padding: 5px;
+  width: 70%;
+}
+#api-editor .api-master-resources .api-resource-filter .dropdown-kebab-pf button {
+  margin-right: 11px;
+}
+#api-editor .api-master-resources .api-resource {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 24px;
+}
+#api-editor .api-master-resources .api-resource > div {
+  border-left: 4px solid transparent;
+  padding-left: 10px;
+}
+#api-editor .api-master-resources .api-resource.active > div {
+  border-left: 4px solid rgb(0, 136, 206);
+  background-color: rgba(101,109,115,.25);
+}
+#api-editor .api-master-resources .api-resource .api-resource-action-kebab {
+  margin-right: 15px;
+  
+}
+#api-editor .api-master-resources .api-resource .api-resource-action-kebab > button {
+  font-size: 16px;
+  padding: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 0px;
+  visibility: hidden;
+}
+#api-editor .api-master-resources .api-resource:hover .api-resource-action-kebab > button {
+  visibility: visible;
+}
+#api-editor span.path-param {
+  font-weight: 400;
+  color: #ff6a7c;
+}
+
+#api-editor .api-master-definitions {
+  position: absolute;
+  top: 60%;
+  left: 0px;
+  bottom: 0px;
+  right: 70%;
+  overflow-y: auto;
+}
+#api-editor .api-master-definitions .api-definition-filter {
+  padding: 8px;
+  border-bottom: 1px solid #333;
+}
+#api-editor .api-master-definitions .api-definition-filter > .fa {
+  margin-left: 5px;
+  margin-right: 10px;
+  font-size: 16px;
+  display: inline;
+}
+#api-editor .api-master-definitions .api-definition-filter .search-box {
+  border: 0px;
+  padding: 5px;
+  width: 70%;
+}
+#api-editor .api-master-definitions .api-definition-filter .dropdown-kebab-pf button {
+  margin-right: 11px;
+}
+#api-editor .api-master-definitions .api-definition {
+  text-decoration: none;
+  font-size: 15px;
+  line-height: 24px;
+}
+#api-editor .api-master-definitions .api-definition > div {
+  border-left: 4px solid transparent;
+  padding-left: 10px;
+}
+#api-editor .api-master-definitions .api-definition:hover > div {
+}
+#api-editor .api-master-definitions .api-definition .api-definition-action-kebab {
+  margin-right: 15px;
+  
+}
+#api-editor .api-master-definitions .api-definition .api-definition-action-kebab > button {
+  font-size: 16px;
+  padding: 0px;
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 0px;
+  visibility: hidden;
+}
+#api-editor .api-master-definitions .api-definition:hover .api-definition-action-kebab > button {
+  visibility: visible;
+}
+
+#api-editor .api-path .api-path-detail h1 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #666;
+  margin-top: 15px;
+  margin-bottom: 0px;
+}
+#api-editor .api-path .api-path-detail hr {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+#api-editor .api-path .api-path-detail h2 {
+  font-size: 15px;
+  text-decoration: underline;
+}
+#api-editor .api-path-parameters td.parameter {
+  color: #ff6a7c;
+  width: 1%;
+  white-space: nowrap;
+}
+#api-editor .api-path-parameters td.icons, .api-details table td.icons {
+  color: #666;
+  width: 1%;
+  white-space: nowrap;
+}
+#api-editor .api-path-parameters td.icons i:hover {
+  cursor: pointer;
+}
+
+#api-editor .api-response .tlabel {
+  padding: 2px;
+  padding-right: 10px;
+  text-align: right;
+}
+#api-editor .api-response .tlabel span {
+  font-weight: bold;
+}
+
+
+#api-editor .api-detail {
+  position: absolute;
+  left: 30%;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: white;
+  overflow-y: auto;
+}
+
+
+#api-editor .api-detail .api-detail-title {
+  padding: 10px;
+  height: 50px;
+}
+#api-editor .api-detail .api-detail-title h1 {
+  padding: 0px;
+  margin: 0px;
+}
+
+#api-editor .api-detail .api-detail-body {
+  padding: 20px;
+}
+#api-editor .api-detail .api-detail-body p {
+}
+#api-editor .api-detail .api-detail-body h2 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+#api-editor .api-path, .api-type {
+  margin-bottom: 5px;
+}
+
+#api-editor .api-path .api-path-heading, .api-type .api-type-heading {
+  border: 1px solid transparent;
+  border-top: 1px solid rgb(57, 165, 220);
+  background-color: #f3f3fa;
+}
+#api-editor .api-path .api-path-heading h2, .api-type .api-type-heading h2 {
+  padding: 3px;
+  font-size: 18px;
+  margin: 5px;
+}
+#api-editor .api-path .api-path-heading h2 a, .api-type .api-type-heading h2 a {
+  color: black;
+  font-weight: 300;
+}
+#api-editor .api-path .api-path-heading h2 a span.path-param {
+  font-weight: 400;
+  color: #ff6a7c;
+}
+#api-editor .api-path .api-path-heading:hover, .api-type .api-type-heading:hover {
+  background-color: rgb(57, 165, 220);
+  color: white;
+}
+#api-editor .api-path .api-path-heading:hover h2 a, .api-type .api-type-heading:hover h2 a {
+  color: white;
+}
+#api-editor .api-path .api-path-heading:hover h2 a span.path-param {
+  color: white;
+}
+
+#api-editor .api-path .api-path-heading h2 .api-path-heading-gppd {
+  float: right;
+  font-weight: 400;
+  border: 1px solid rgb(0, 101, 156);
+  background-color: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-radius: 3px;
+}
+
+#api-editor .api-path .api-path-heading h2 .api-path-heading-gppd span {
+  color: #ccc;
+}
+#api-editor .api-path .api-path-heading h2 .api-path-heading-gppd span.enabled {
+  color: black;
+}
+#api-editor .api-path .api-path-heading h2 .api-path-heading-gppd .api-path-heading-gppd-get.enabled {
+  color: green;
+}
+#api-editor .api-path .api-path-heading h2 .api-path-heading-gppd .api-path-heading-gppd-put.enabled {
+  color: orange;
+}
+#api-editor .api-path .api-path-heading h2 .api-path-heading-gppd .api-path-heading-gppd-post.enabled {
+  color: orange;
+}
+#api-editor .api-path .api-path-heading h2 .api-path-heading-gppd .api-path-heading-gppd-del.enabled {
+  color: red;
+}
+
+#api-editor .api-path .api-path-detail, .api-type .api-type-detail {
+  padding: 5px;
+}
+
+#api-editor .api-path .api-path-detail .nav-tabs, .api-type .api-type-detail .nav-tabs {
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+#api-editor .api-path .api-path-detail .nav-tabs li a, .api-type .api-type-detail .nav-tabs li a {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+@import "api-editor-dark.less";
+@import "api-editor-light.less";
+
