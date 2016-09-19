@@ -23,6 +23,7 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
     <script type="text/javascript" src="js/api-designer.js"></script>
     <script type="text/javascript" src="js/main-nav.js"></script>
+    <script type="text/javascript" src="js/api-editor.js"></script>
   </head>
 
   <body class="cards-pf">
@@ -389,7 +390,7 @@
                         <td class="parameter">apiId</td>
                         <td class="icons">
                           <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-circle"></i>
-                          <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
+                          <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
                         </td>
                         <td class="description">The API's unique identifier.</td>
                         <td class="type">string</td>
@@ -398,7 +399,7 @@
                         <td class="parameter">version</td>
                         <td class="icons">
                           <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-circle"></i>
-                          <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
+                          <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
                         </td>
                         <td class="description">The version of the API to get.</td>
                         <td class="type">string</td>
@@ -468,7 +469,7 @@
                         <td class="parameter">apiId</td>
                         <td class="icons">
                           <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-circle"></i>
-                          <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
+                          <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
                         </td>
                         <td class="description">The API's unique identifier.</td>
                         <td class="type">string</td>
@@ -477,7 +478,7 @@
                         <td class="parameter">version</td>
                         <td class="icons">
                           <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-circle"></i>
-                          <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle">
+                          <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
                         </td>
                         <td class="description">The version of the API to get.</td>
                         <td class="type">string</td>
@@ -512,29 +513,6 @@
         </div>
       </div>
     </div>
-
-    <script type="text/javascript">
-      function selectResource() {
-          $('#top-detail').hide();
-      	  $('#resource-detail').show();
-      	  $('.api-master-top').removeClass('active');
-      	  $('#the-api-resource').addClass('active');
-      }
-      
-      $(function () {
-        $('#theme-toggle').click(function() {
-          if ($('#api-editor').hasClass('light')) {
-            $('#api-editor').removeClass('light');
-            $('#api-editor').addClass('dark');
-            $(this).text('Use Light Theme');
-          } else {
-            $('#api-editor').removeClass('dark');
-            $('#api-editor').addClass('light');
-            $(this).text('Use Dark Theme');
-          }
-        });
-      })
-    </script>
     
   </body>
 
