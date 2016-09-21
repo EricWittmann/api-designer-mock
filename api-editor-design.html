@@ -155,7 +155,7 @@
       
         <div class="api-master-top active">
           <a href="#" onclick="blur(); selectTop();">
-            <p>Gateway Configuration API</p>
+            <span>Gateway Configuration API</span>
           </a>
         </div>
   
@@ -170,7 +170,7 @@
             </div>
           </div>
   
-          <a class="api-resource" href="#" onclick="blur(); alert('Try clicking the SECOND one in the list...')">
+          <div class="api-resource" onclick="blur(); alert('Try clicking the SECOND one in the list...')">
             <div>
               <span>/apis/</span>
               <div class="api-resource-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -179,8 +179,8 @@
                 </button>
               </div>
             </div>
-          </a>
-          <a id="the-api-resource" class="api-resource" href="#" onclick="blur(); selectResource()">
+          </div>
+          <div id="the-api-resource" class="api-resource" onclick="blur(); selectResource()">
             <div>
               <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span>
               <span class="api-resource-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -189,8 +189,8 @@
                 </button>
               </span>
             </div>
-          </a>
-          <a class="api-resource" href="#" onclick="blur(); alert('Try clicking the SECOND one in the list...')">
+          </div>
+          <div class="api-resource" onclick="blur(); alert('Try clicking the SECOND one in the list...')">
             <div>
               <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span><span>/path</span>
               <span class="api-resource-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -199,8 +199,8 @@
                 </button>
               </span>
             </div>
-          </a>
-          <a class="api-resource" href="#" onclick="blur(); alert('Try clicking the SECOND one in the list...')">
+          </div>
+          <div class="api-resource" onclick="blur(); alert('Try clicking the SECOND one in the list...')">
             <div>
               <span>/clients/</span>
               <div class="api-resource-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -209,8 +209,8 @@
                 </button>
               </div>
             </div>
-          </a>
-          <a class="api-resource" href="#" onclick="blur(); alert('Try clicking the SECOND one in the list...')">
+          </div>
+          <div class="api-resource" onclick="blur(); alert('Try clicking the SECOND one in the list...')">
             <div>
               <span>/clients/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span>
               <span class="api-resource-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -219,8 +219,8 @@
                 </button>
               </span>
             </div>
-          </a>
-          <a class="api-resource" href="#" onclick="blur(); alert('Try clicking the SECOND one in the list...')">
+          </div>
+          <div class="api-resource" onclick="blur(); alert('Try clicking the SECOND one in the list...')">
             <div>
               <span>/system/status</span>
               <div class="api-resource-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -229,7 +229,7 @@
                 </button>
               </div>
             </div>
-          </a>
+          </div>
         </div>
   
         <div class="api-master-definitions">
@@ -242,7 +242,7 @@
               </button>
             </div>
           </div>
-          <a class="api-definition" href="#" onclick="blur(); alert('Not yet implemented.')">
+          <div class="api-definition" onclick="blur(); alert('Not yet implemented.')">
             <div>
               <span>{Api}</span>
               <div class="api-definition-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -251,9 +251,9 @@
                 </button>
               </div>
             </div>
-          </a>
+          </div>
           
-          <a class="api-definition" href="#" onclick="blur(); alert('Not yet implemented.')">
+          <div class="api-definition" onclick="blur(); alert('Not yet implemented.')">
             <div>
               <span>{NewApi}</span>
               <div class="api-definition-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -262,8 +262,8 @@
                 </button>
               </div>
             </div>
-          </a>
-          <a class="api-definition" href="#" onclick="blur(); alert('Not yet implemented.')">
+          </div>
+          <div class="api-definition" onclick="blur(); alert('Not yet implemented.')">
             <div>
               <span>{Client}</span>
               <div class="api-definition-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -272,8 +272,8 @@
                 </button>
               </div>
             </div>
-          </a>
-          <a class="api-definition" href="#" onclick="blur(); alert('Not yet implemented.')">
+          </div>
+          <div class="api-definition" onclick="blur(); alert('Not yet implemented.')">
             <div>
               <span>{NewClient}</span>
               <div class="api-definition-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -282,8 +282,8 @@
                 </button>
               </div>
             </div>
-          </a>
-          <a class="api-definition" href="#" onclick="blur(); alert('Not yet implemented.')">
+          </div>
+          <div class="api-definition" onclick="blur(); alert('Not yet implemented.')">
             <div>
               <span>{NotAuthorizedError}</span>
               <div class="api-definition-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -292,8 +292,8 @@
                 </button>
               </div>
             </div>
-          </a>
-          <a class="api-definition" href="#" onclick="blur(); alert('Not yet implemented.')">
+          </div>
+          <div class="api-definition" onclick="blur(); alert('Not yet implemented.')">
             <div>
               <span>{PublishingError}</span>
               <div class="api-definition-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -302,8 +302,8 @@
                 </button>
               </div>
             </div>
-          </a>
-          <a class="api-definition" href="#" onclick="blur(); alert('Not yet implemented.')">
+          </div>
+          <div class="api-definition" onclick="blur(); alert('Not yet implemented.')">
             <div>
               <span>{ApiDeleteError}</span>
               <div class="api-definition-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -312,8 +312,8 @@
                 </button>
               </div>
             </div>
-          </a>
-          <a class="api-definition" href="#" onclick="blur(); alert('Not yet implemented.')">
+          </div>
+          <div class="api-definition" onclick="blur(); alert('Not yet implemented.')">
             <div>
               <span>{SystemStatus}</span>
               <div class="api-definition-action-kebab dropdown pull-right dropdown-kebab-pf">
@@ -322,7 +322,7 @@
                 </button>
               </div>
             </div>
-          </a>
+          </div>
           
         </div>
   
