@@ -1,11 +1,23 @@
 @api-path-color: #ff6a7c;
-@api-hover-color: #ddeaff;
+@api-path-color-light: lighten(@api-path-color, 20%);
 @api-border-color: #ddd;
 @api-selected-color: #39a5dc;
+@api-selected-color-light: lighten(@api-selected-color, 25%);
+@api-hover-color: lighten(@api-selected-color, 35%);
 
 #api-editor span.path-param {
   font-weight: 400;
   color: @api-path-color;
+}
+
+#api-editor .api-item-description {
+  font-size: 16px;
+  border-left: 2px solid @api-selected-color;
+  padding-left: 5px;
+}
+
+#api-editor .api-item-title {
+  font-weight: 500;
 }
 
 #api-editor {
@@ -49,7 +61,7 @@
   cursor: pointer;
 }
 #api-editor .editor-master .editor-main.selected {
-  background-color: @api-selected-color;
+  background-color: @api-selected-color-light;
   cursor: default;
 }
 #api-editor .editor-master .editor-main h2 {
@@ -57,7 +69,6 @@
   margin: 0;
 }
 #api-editor .editor-master .editor-main.selected h2 {
-  color: white;
 }
 
 #api-editor .editor-master .editor-search {
@@ -136,6 +147,31 @@
   background-color: @api-hover-color;
   cursor: pointer;
 }
+#api-editor .editor-master .editor-outline .api-resource.selected {
+  background-color: @api-selected-color-light;
+  cursor: default;
+  border-left: 2px solid @api-selected-color;
+}
+#api-editor .editor-master .editor-outline .api-resource.selected span.path-param {
+}
+#api-editor .editor-master .editor-outline .api-resource.selected .label {
+  font-size: 12px;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+#api-editor .editor-master .editor-outline .api-resource.selected .label.empty {
+  background-color: #ccc;
+}
+#api-editor .editor-master .editor-outline .api-resource.selected .label:hover {
+  border: 1px solid @api-hover-color;
+}
+#api-editor .editor-master .editor-outline .api-resource.selected .label.selected {
+  border: 1px solid white;
+}
+#api-editor .editor-master .editor-outline .api-resource .api-operations {
+  margin-top: 5px;
+  padding-bottom: 10px;
+}
 
 #api-editor .editor-master .editor-outline .api-definition {
   padding-left: 15px;
@@ -146,8 +182,12 @@
   cursor: pointer;
 }
 
+#api-editor .editor-detail .section {
+  padding-top: 8px;
+}
+
 #api-editor .editor-detail .detail-title {
-  height: 48px;
+  height: 45px;
   border-bottom: 1px solid @api-border-color;
 }
 #api-editor .editor-detail .detail-title .detail-label {
@@ -161,10 +201,16 @@
   float: right;
   border-left: 1px solid @api-border-color;
 }
+#api-editor .editor-detail .detail-title .detail-actions .dropdown-menu {
+  left: auto;
+  right: 0;
+}
 #api-editor .editor-detail .detail-title .detail-actions .dropdown .btn {
   padding-left: 20px;
   padding-right: 20px;
-  line-height: 37px;
+  line-height: 38px;
+  font-size: 18px;
+  color: #333;
 }
 #api-editor .editor-detail .detail-title .detail-actions:hover {
   background-color: @api-hover-color;
@@ -183,6 +229,7 @@
 
 #api-editor .editor-detail .detail-content .section .section-body {
   padding-left: 15px;
+  padding-right: 15px;
 }
 
 #api-editor .editor-detail .detail-content .info-section h1 {
@@ -190,16 +237,12 @@
 }
 
 #api-editor .editor-detail .detail-content .info-section .api-title {
-  font-weight: 500;
 }
 #api-editor .editor-detail .detail-content .info-section .api-version {
   margin-left: 20px;
   font-size: 20px;
 }
 #api-editor .editor-detail .detail-content .info-section .api-description {
-  font-size: 16px;
-  border-left: 2px solid @api-selected-color;
-  padding-left: 5px;
   margin-top: 15px;
   margin-bottom: 15px;
 }
@@ -215,4 +258,77 @@
   font-weight: 600;
   color: #232;
   margin-bottom: -5px;
+}
+
+#api-editor .editor-detail .detail-title .label {
+  margin-left: 10px;
+  font-size: 13px;
+}
+
+#api-editor .resource-description {
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+#api-editor .api-resource-parameters td.parameter {
+  color: @api-path-color;
+  width: 1%;
+  white-space: nowrap;
+}
+#api-editor .api-resource-parameters td.icons, .api-details table td.icons {
+  color: #666;
+  width: 1%;
+  white-space: nowrap;
+}
+#api-editor .api-resource-parameters td.icons i:hover {
+  cursor: pointer;
+}
+
+#api-editor .api-response .tlabel {
+  padding: 2px 10px 2px 2px;
+  text-align: right;
+}
+#api-editor .api-response .tlabel span {
+  font-weight: bold;
+}
+
+#api-editor .editor-detail .api-resource-detail .operations-section .api-operation {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid @api-border-color;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#api-editor .editor-detail .api-resource-detail .operations-section .api-operation .type {
+  display: inline-table;
+}
+#api-editor .editor-detail .api-resource-detail .operations-section .api-operation .name {
+  display: inline-table;
+  margin-left: 5px;
+  font-size: 15px;
+  font-weight: 600;
+}
+#api-editor .editor-detail .api-resource-detail .operations-section .api-operation .description {
+  margin-top: 5px;
+  font-size: 14px;
+}
+#api-editor .editor-detail .api-resource-detail .operations-section .api-operation .actions {
+  margin-top: 5px;
+}
+
+#api-editor .editor-detail .api-resource-detail .operations-section .api-operation.empty {
+  color: #999;
+}
+
+#api-editor .editor-detail .api-resource-detail .operations-section .api-operation.empty .label {
+  background-color: #ccc;
+}
+
+#api-editor .editor-detail .api-resource-detail .request-body-section .request-body-name {
+  font-size: 15px;
+  margin-left: 10px;
+}
+#api-editor .editor-detail .api-resource-detail .request-body-section .description {
+  margin-top: 8px;
+  font-size: 14px;
 }

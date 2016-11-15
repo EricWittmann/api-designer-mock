@@ -11,8 +11,8 @@
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.14.0/css/patternfly.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.14.0/css/patternfly-additions.css">
-    <link rel="stylesheet/less" type="text/css" href="../css/api-designer.less" />
-    <link rel="stylesheet/less" type="text/css" href="editor.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/api-designer.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/editor.less" />
 
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -21,9 +21,8 @@
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.14.0/js/patternfly.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.4/ace.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
-    <script type="text/javascript" src="../js/api-designer.js"></script>
-    <script type="text/javascript" src="../js/main-nav.js"></script>
-    <script type="text/javascript" src="editor.js"></script>
+    <script type="text/javascript" src="js/api-designer.js"></script>
+    <script type="text/javascript" src="js/main-nav.js"></script>
   </head>
 
   <body class="cards-pf">
@@ -153,7 +152,7 @@
       <div class="api-editor-container">
         <div class="api-editor light" id="api-editor">
           <div class="editor-master">
-            <div class="editor-main selected">
+            <div class="editor-main" onclick="window.location = 'editor-default.html'">
               <h2>Gateway Configuration API</h2>
             </div>
             <div class="editor-search">
@@ -172,8 +171,14 @@
                   <div class="api-resource">
                     <span>/apis/</span>
                   </div>
-                  <div class="api-resource">
+                  <div class="api-resource selected">
                     <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span>
+                    <div class="api-operations">
+                      <span class="label label-success" onclick="window.location = 'editor-resource-get.html'">GET</span>
+                      <span class="label label-info selected" onclick="window.location = 'editor-resource.html'">PUT</span>
+                      <span class="label label-warning empty">POST</span>
+                      <span class="label label-danger" onclick="window.location = 'editor-resource-delete.html'">DELETE</span>
+                    </div>
                   </div>
                   <div class="api-resource">
                     <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span><span>/path</span>
@@ -216,9 +221,12 @@
 
           <div class="editor-detail">
             <div class="detail-title">
-              <div class="detail-label"></div>
+              <div class="detail-label">
+                <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span>
+                <span class="label label-info selected">PUT</span>
+              </div>
               <div class="detail-actions">
-                <div class="dropdown dropdown-kebab-pf">
+                <div class="dropdown">
                   <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     <span class="fa fa-ellipsis-v"></span>
                   </button>
@@ -240,88 +248,96 @@
             </div>
             <div class="detail-content">
             
-              <!-- Info about the API -->
-              <div class="section info-section">
-                <div class="section-header">
-                  <a data-toggle="collapse" data-target="#info-section-body">
-                    <span class="section-label">INFO</span>
-                  </a>
-                </div>
-                <div class="section-body collapse in" id="info-section-body">
-
-                  <h1>
-                    <span class="api-title">Gateway Configuration API</span>
-                    <span class="api-version">1.0.0</span>
-                  </h1>
-                  <div class="api-description">
-                    This is a sample server Petstore server via JSON.
-                  </div>
-                  <div class="api-meta-data">
-                    <!-- TOS -->
-                    <div class="api-md-entry">
-                      <div class="md-label">Terms of Service</div>
-                      <div class="md-value">
-                        <a href="http://helloreverb.com/terms/">http://helloreverb.com/terms/</a>
-                        <span class="fa fa-fw fa-external-link"></span>
-                      </div>
+              <div class="api-resource-detail">
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="apipath-2-get">
+                    <h1>
+                      <span class="api-item-title">Update a Published API</span>
+                    </h1>
+                    <div class="resource-description api-item-description">
+                      Updates a single published API with new information, particularly new policy configuration.
+                      Use this command when an API's configuration details have changed, such as rate limits or
+                      authentication details.
                     </div>
-                    <!-- Contact Info -->
-                    <div class="api-md-entry">
-                      <div class="md-label">Contact</div>
-                      <div class="md-value">
-                        <div>
-                          <span>James Bond</span>
-                          <span> - </span>
-                          <span>james.bond@mi6.uk</span>
+
+                    <div class="section request-body-section">
+                      <div class="section-header">
+                        <a data-toggle="collapse" data-target="#request-body-section-body">
+                          <span class="section-label">Request Body</span>
+                        </a>
+                      </div>
+                      <div class="section-body collapse in" id="request-body-section-body">
+                        <div class="dropdown">
+                          <button class="btn btn-default dropdown-toggle" type="button" id="requestBodyMenu" data-toggle="dropdown">
+                            <span>Api</span>
+                            <span class="caret"></span>
+                          </button>
+                          <ul class="dropdown-menu" role="menu" aria-labelledby="requestBodyMenu">
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">string</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">boolean</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">integer</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">double</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">long</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">float</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">short</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">byte</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">timestamp</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation" class="disabled"><a role="menuitem" tabindex="-1" href="#">Api</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">NewApi</a></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Client</a></li>
+                            <li role="presentation" class="divider"></li>
+                            <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Custom Type</a></li>
+                          </ul>
                         </div>
-                        <div>
-                          <a href="http://www.007.com/">http://www.007.com/</a>
-                          <span class="fa fa-fw fa-external-link"></span>
+                        <div class="request-body-description api-item-description description">
+                          The updated API details in the form of an Api object.  This information will be used to update
+                          the settings for the API.
+                        </div>
+                        
+                      </div>
+                    </div>
+
+                    <div class="section query-paramters-section">
+                      <div class="section-header">
+                        <a data-toggle="collapse" data-target="#parameters-section-body">
+                          <span class="section-label">QUERY PARAMETERS</span>
+                        </a>
+                        <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
+                      </div>
+                      <div class="section-body collapse in" id="parameters-section-body">
+                        <div class="alert alert-info">
+                          <span class="pficon pficon-info"></span>
+                          <strong>No query parameters have been declared.</strong>
+                          <button class="btn btn-primary btn-sm pull-right">Add Query Parameter</button>
                         </div>
                       </div>
                     </div>
-                    <!-- License -->
-                    <div class="api-md-entry">
-                      <div class="md-label">License</div>
-                      <div class="md-value">
-                        <span>Apache 2.0</span>
-                        <a href="http://www.apache.org/licenses/LICENSE-2.0.html">http://www.apache.org/licenses/LICENSE-2.0.html</a>
-                        <span class="fa fa-fw fa-external-link"></span>
+                    
+                    <div class="section responses-section">
+                      <div class="section-header">
+                        <a data-toggle="collapse" data-target="#responses-section-body">
+                          <span class="section-label">RESPONSES</span>
+                        </a>
+                        <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
+                      </div>
+                      <div class="section-body collapse in" id="responses-section-body">
+                        <table class="table table-striped api-resource-responses">
+                          <tr>
+                            <th>Status Code</th>
+                            <th>Description</th>
+                            <th>Type</th>
+                          </tr>
+                          <tr>
+                            <td class="parameter">204 No Content</td>
+                            <td class="description">Indicates that the update was completed successfully.</td>
+                            <td class="type"></td>
+                          </tr>
+                        </table>
                       </div>
                     </div>
-
+                    
                   </div>
-
-                </div>
-              </div>
-
-              <!-- Global Tags -->
-              <div class="section info-section">
-                <div class="section-header">
-                  <a data-toggle="collapse" data-target="#tags-section-body">
-                    <span class="section-label">TAGS</span>
-                  </a>
-                  <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
-                </div>
-                <div class="section-body collapse in" id="tags-section-body">
-
-                  <p>Configure the API's tags here</p>
-
-                </div>
-              </div>
-            
-              <!-- Security Definitions -->
-              <div class="section info-section">
-                <div class="section-header">
-                  <a data-toggle="collapse" data-target="#security-section-body">
-                    <span class="section-label">SECURITY</span>
-                  </a>
-                  <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
-                </div>
-                <div class="section-body collapse in" id="security-section-body">
-
-                  <p>Configure the API's security definitions here</p>
-
                 </div>
               </div>
             

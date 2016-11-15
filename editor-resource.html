@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Designer (Mock)</title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.14.0/css/patternfly.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.14.0/css/patternfly-additions.css">
+    <link rel="stylesheet/less" type="text/css" href="css/api-designer.less" />
+    <link rel="stylesheet/less" type="text/css" href="css/editor.less" />
+
+    <!-- Scripts -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/patternfly/3.14.0/js/patternfly.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.4/ace.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.7.1/less.js"></script>
+    <script type="text/javascript" src="js/api-designer.js"></script>
+    <script type="text/javascript" src="js/main-nav.js"></script>
+  </head>
+
+  <body class="cards-pf">
+    <nav class="navbar navbar-default navbar-pf" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html" style="padding-top: 4px; padding-bottom: 2px">
+          <img class="navbar-brand-logo" src="../img/api-designer-logo.png" alt="API Designer">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-utility">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              <span class="pficon pficon-user"></span>
+              <span>Tom Brady</span>
+              <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Profile</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Logout</a></li>
+            </ul></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div id="api-nav-menu-shade" style="display:none">
+    </div>
+    
+    <div id="api-vertical-nav">
+      <div id="api-nav-item-dashboard" class="api-nav-item">
+          <span class="fa fa-fw fa-dashboard"></span>
+          <div>Dashboard</div>
+      </div>
+      <div id="api-nav-item-apis" class="api-nav-item active">
+          <span class="fa fa-fw fa-bolt"></span>
+          <div>APIs</div>
+      </div>
+      <div id="api-nav-item-mappings" class="api-nav-item">
+          <span class="fa fa-fw fa-random"></span>
+          <div>Mappings</div>
+      </div>
+      <div class="api-nav-item-filler">
+      </div>
+    </div>
+    
+    <div id="api-vertical-nav-details" style="display:none">
+      <div id="api-nav-detail-dashboard" class="api-nav-detail-item" style="display:none">
+        <h3>Dashboard</h3>
+        <p>Click below to navigate back to the default API Designer dashboard.</p>
+        <ul>
+          <li><a href="dashboard.html">Back to Dashboard</a></li>
+        </ul>
+      </div>
+      <div id="api-nav-detail-apis" class="api-nav-detail-item" style="display:none">
+        <h3>APIs</h3>
+        <p class="description">Choose from the actions below or jump directly to one of your starred/favorited APIs.</p>
+        <h4 class="heading">API Actions</h4>
+        <div class="action">
+          <a href="my-apis.html"><span class="fa fa-fw fa-search"></span><span>List All APIs</span></a>
+        </div>
+        <div class="action">
+          <a href="new-api.html"><span class="fa fa-fw fa-plus"></span><span>New API</span></a>
+        </div>
+
+        <h4 class="heading">Starred APIs</h4>
+        <div>
+          <a href="api-details.html"><span class="fa fa-fw fa-bolt"></span><span>Gateway Configuration API</span></a>
+        </div>
+        <div>
+          <a href="api-details.html"><span class="fa fa-fw fa-bolt"></span><span>Manager API</span></a>
+        </div>
+      </div>
+      <div id="api-nav-detail-mappings" class="api-nav-detail-item" style="display:none">
+        <h3>Mappings</h3>
+        <p class="description">Choose from the actions below or jump directly to one of your starred/favorited Mappings.</p>
+        <h4 class="heading">Mapping Actions</h4>
+        <div class="action">
+          <a href="#"><span class="fa fa-fw fa-search"></span><span>List All Mappings</span></a>
+        </div>
+        <div class="action">
+          <a href="#"><span class="fa fa-fw fa-plus"></span><span>New Mapping</span></a>
+        </div>
+
+        <h4 class="heading">Starred Mappings</h4>
+        <div>
+          <a href="#"><span class="fa fa-fw fa-random"></span><span>Invoice API -> SOAP Invoices</span></a>
+        </div>
+        <div>
+          <a href="#"><span class="fa fa-fw fa-random"></span><span>Manager API -> Manager Camel Routes</span></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="api-page-body">
+      <div class="" style="background-color: white; float: left; width: 100%; border-bottom: 1px solid #ddd">
+        <div class="container-fluid api-breadcrumbs" style="float:left; border-bottom: 0px; margin-bottom: 0px">
+          <div class="row-fluid">
+            <ol class="breadcrumb">
+              <li><a href="dashboard.html"><span class="fa fa-fw fa-dashboard"></span><span>Dashboard</span></a></li>
+              <li><a href="my-apis.html"><span class="fa fa-fw fa-search"></span><span>My APIs</span></a></li>
+              <li class="active">
+                <a href="api-details.html">
+                  <span class="fa fa-fw fa-bolt"></span>
+                  <span>API:</span>
+                  <strong>Gateway Configuration API</strong>
+                </a>
+              </li>
+              <li class="active">
+                <span class="fa fa-fw fa-pencil"></span>
+                <span>Editor</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="pull-right">
+          <button id="theme-toggle" class="btn btn-sm btn-default" style="margin-top: 7px; margin-right: 15px;">Use Dark Theme</button>
+        </div>
+      </div>
+
+      <div class="api-editor-container">
+        <div class="api-editor light" id="api-editor">
+          <div class="editor-master">
+            <div class="editor-main" onclick="window.location = 'editor-default.html'">
+              <h2>Gateway Configuration API</h2>
+            </div>
+            <div class="editor-search">
+              <span class="fa fa-fw fa-search"></span>
+              <input type="text" placeholder="Search everything...">
+            </div>
+            <div class="editor-outline">
+              <div class="section resource-section">
+                <div class="section-header">
+                  <a data-toggle="collapse" data-target="#resource-section-body">
+                    <span class="section-label">Resources</span>
+                  </a>
+                  <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
+                </div>
+                <div class="section-body collapse in" id="resource-section-body">
+                  <div class="api-resource">
+                    <span>/apis/</span>
+                  </div>
+                  <div class="api-resource selected">
+                    <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span>
+                    <div class="api-operations">
+                      <span class="label label-success" onclick="window.location = 'editor-resource-get.html'">GET</span>
+                      <span class="label label-info" onclick="window.location = 'editor-resource-put.html'">PUT</span>
+                      <span class="label label-warning empty">POST</span>
+                      <span class="label label-danger" onclick="window.location = 'editor-resource-delete.html'">DELETE</span>
+                    </div>
+                  </div>
+                  <div class="api-resource">
+                    <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span><span>/path</span>
+                  </div>
+                  <div class="api-resource">
+                    <span>/clients/</span>
+                  </div>
+                  <div class="api-resource">
+                    <span>/clients/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span>
+                  </div>
+                  <div class="api-resource">
+                    <span>/system/status</span>
+                  </div>
+                </div>
+              </div>
+              <div class="section definition-section">
+                <div class="section-header">
+                  <a data-toggle="collapse" data-target="#definition-section-body">
+                    <span class="section-label">Definitions</span>
+                  </a>
+                  <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
+                </div>
+                <div class="section-body collapse in" id="definition-section-body">
+                  <div class="api-definition">
+                    <span class="fa fa-fw fa-code"></span>
+                    <span>Api</span>
+                  </div>
+                  <div class="api-definition">
+                    <span class="fa fa-fw fa-code"></span>
+                    <span>NewApi</span>
+                  </div>
+                  <div class="api-definition">
+                    <span class="fa fa-fw fa-code"></span>
+                    <span>Client</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="editor-detail">
+            <div class="detail-title">
+              <div class="detail-label">
+                <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span>
+              </div>
+              <div class="detail-actions">
+                <div class="dropdown">
+                  <button class="btn btn-link dropdown-toggle" type="button" id="dropdownKebab" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                    <span class="fa fa-ellipsis-v"></span>
+                  </button>
+                  <ul class="dropdown-menu " aria-labelledby="dropdownKebab">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="detail-tabs">
+              <ul class="nav nav-tabs nav-tabs-pf">
+                <li class="active"><a href="#">Design</a></li>
+                <li><a href="#">Source</a></li>
+              </ul>
+            </div>
+            <div class="detail-content">
+            
+              <div class="api-resource-detail">
+                <div class="tab-content">
+                  <div role="tabpanel" class="tab-pane active" id="apipath-2-get">
+                    <h1>
+                      <span class="api-item-title">Manage a Single Published API</span>
+                    </h1>
+                    <div class="resource-description api-item-description">
+                      This endpoint allows you to manage an API that was published previously using the
+                      */apis/* endpoint.  You can retrieve information about the API, update it, or 
+                      delete (retire) it.
+                    </div>
+
+                    <!-- Parameters Section -->
+                    <div class="section paramters-section">
+                      <div class="section-header">
+                        <a data-toggle="collapse" data-target="#parameters-section-body">
+                          <span class="section-label">PARAMETERS</span>
+                        </a>
+                        <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
+                      </div>
+                      <div class="section-body collapse in" id="parameters-section-body">
+                        <table class="table table-striped api-resource-parameters">
+                          <tr>
+                            <th>Parameter</th>
+                            <th></th>
+                            <th>Description</th>
+                            <th>Type</th>
+                          </tr>
+                          <tr>
+                            <td class="parameter">organizationId</td>
+                            <td class="icons">
+                              <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-registered"></i>
+                              <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
+                            </td>
+                            <td class="description">The API's organization id.</td>
+                            <td class="type">string</td>
+                          </tr>
+                          <tr>
+                            <td class="parameter">apiId</td>
+                            <td class="icons">
+                              <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-registered"></i>
+                              <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
+                            </td>
+                            <td class="description">The API's unique identifier.</td>
+                            <td class="type">string</td>
+                          </tr>
+                          <tr>
+                            <td class="parameter">version</td>
+                            <td class="icons">
+                              <i data-toggle="tooltip" title="Parameter required" class="fa fa-fw fa-registered"></i>
+                              <i data-toggle="tooltip" title="Parameter found in: path" class="fa fa-fw fa-plus-circle"></i>
+                            </td>
+                            <td class="description">The version of the API to get.</td>
+                            <td class="type">string</td>
+                          </tr>
+                        </table>
+                      </div>
+                    </div>
+                    
+                    <!-- Operations Section -->
+                    <div class="section operations-section">
+                      <div class="section-header">
+                        <a data-toggle="collapse" data-target="#operations-section-body">
+                          <span class="section-label">OPERATIONS</span>
+                        </a>
+                        <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
+                      </div>
+                      <div class="section-body collapse in" id="operations-section-body">
+                      
+                        <div class="api-operation">
+                          <div class="">
+                            <div class="type"><span class="label label-success">GET</span></div>
+                            <div class="name">Get a Published API</div>
+                          </div>
+                          <div class="description api-item-description">
+                            Returns information about a single published API.  Required parameters include the organization id,
+                            API id, and API version.
+                          </div>
+                        </div>
+                        <div class="api-operation">
+                          <div class="">
+                            <div class="type"><span class="label label-info">PUT</span></div>
+                            <div class="name">Update a Published API</div>
+                          </div>
+                          <div class="description api-item-description">
+                            Updates a single published API with new information, particularly new policy configuration. Use 
+                            this command when an API's configuration details have changed, such as rate limits or authentication details. 
+                          </div>
+                        </div>
+                        <div class="api-operation empty">
+                          <div class="">
+                            <div class="type"><span class="label label-info">POST</span></div>
+                            <div class="name">Not Supported</div>
+                          </div>
+                          <div class="actions">
+                            <button class="btn btn-default">Create Operation</button>
+                          </div>
+                        </div>
+                        <div class="api-operation">
+                          <div class="">
+                            <div class="type"><span class="label label-danger">DELETE</span></div>
+                            <div class="name">Retire an API</div>
+                          </div>
+                          <div class="description api-item-description">
+                            Retires an API from the gateway, effectively removing it from the system and making it impossible to invoke. 
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+
+</html>
