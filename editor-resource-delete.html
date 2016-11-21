@@ -176,7 +176,6 @@
                     <div class="api-operations">
                       <span class="label label-success" onclick="window.location = 'editor-resource-get.html'">GET</span>
                       <span class="label label-info" onclick="window.location = 'editor-resource-put.html'">PUT</span>
-                      <span class="label label-warning empty">POST</span>
                       <span class="label label-danger selected" onclick="window.location = 'editor-resource.html'">DELETE</span>
                     </div>
                   </div>
@@ -213,6 +212,29 @@
                   <div class="api-definition">
                     <span class="fa fa-fw fa-code"></span>
                     <span>Client</span>
+                  </div>
+                </div>
+              </div>
+              <!-- Responses Section -->
+              <div class="section response-section">
+                <div class="section-header">
+                  <a class="collapsed" data-toggle="collapse" data-target="#response-section-body">
+                    <span class="section-label">Responses</span>
+                  </a>
+                  <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
+                </div>
+                <div class="section-body collapse" id="response-section-body">
+                  <div class="api-response">
+                    <span class="fa fa-fw fa-reply"></span>
+                    <span>NotFound</span>
+                  </div>
+                  <div class="api-response">
+                    <span class="fa fa-fw fa-reply"></span>
+                    <span>IllegalInput</span>
+                  </div>
+                  <div class="api-response">
+                    <span class="fa fa-fw fa-reply"></span>
+                    <span>GeneralError</span>
                   </div>
                 </div>
               </div>
