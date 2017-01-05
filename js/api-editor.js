@@ -1,18 +1,4 @@
 
-function selectResource() {
-    $('#top-detail').hide();
-    $('#resource-detail').show();
-    $('.api-master-top').removeClass('active');
-    $('#the-api-resource').addClass('active');
-}
-
-function selectTop() {
-    $('#top-detail').show();
-    $('#resource-detail').hide();
-    $('.api-master-top').addClass('active');
-    $('#the-api-resource').removeClass('active');
-}
-
 $(function() {
     $('#theme-toggle').click(function() {
         if ($('#api-editor').hasClass('light')) {
