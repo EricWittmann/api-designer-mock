@@ -152,7 +152,7 @@
       <div class="api-editor-container">
         <div class="api-editor light" id="api-editor">
           <div class="editor-master">
-            <div class="editor-main" onclick="window.location = 'editor-default.html'">
+            <div class="editor-main">
               <h2>Gateway Configuration API</h2>
             </div>
             <div class="editor-search">
@@ -160,6 +160,7 @@
               <input type="text" placeholder="Search everything...">
             </div>
             <div class="editor-outline">
+              <!-- Resources Section -->
               <div class="section resource-section">
                 <div class="section-header">
                   <a data-toggle="collapse" data-target="#resource-section-body">
@@ -171,13 +172,8 @@
                   <div class="api-resource">
                     <span>/apis/</span>
                   </div>
-                  <div class="api-resource selected">
+                  <div class="api-resource" onclick="window.location = 'editor-resource.html'">
                     <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span>
-                    <div class="api-operations">
-                      <span class="label label-success" onclick="window.location = 'editor-resource-get.html'">GET</span>
-                      <span class="label label-info" onclick="window.location = 'editor-resource-put.html'">PUT</span>
-                      <span class="label label-danger selected" onclick="window.location = 'editor-resource.html'">DELETE</span>
-                    </div>
                   </div>
                   <div class="api-resource">
                     <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span><span>/path</span>
@@ -193,6 +189,7 @@
                   </div>
                 </div>
               </div>
+              <!-- Definitions Section -->
               <div class="section definition-section">
                 <div class="section-header">
                   <a data-toggle="collapse" data-target="#definition-section-body">
@@ -205,7 +202,7 @@
                     <span class="fa fa-fw fa-code"></span>
                     <span>Api</span>
                   </div>
-                  <div class="api-definition" onclick="window.location = 'editor-definition.html'">
+                  <div class="api-definition selected">
                     <span class="fa fa-fw fa-code"></span>
                     <span>NewApi</span>
                   </div>
@@ -238,14 +235,14 @@
                   </div>
                 </div>
               </div>
+              
             </div>
           </div>
 
           <div class="editor-detail">
             <div class="detail-title">
               <div class="detail-label">
-                <span>/apis/</span><span class="path-param">{organizationId}</span><span>/</span><span class="path-param">{apiId}</span><span>/</span><span class="path-param">{version}</span>
-                <span class="label label-danger selected">DELETE</span>
+                <span>NewApi</span>
               </div>
               <div class="detail-actions">
                 <div class="dropdown">
@@ -270,59 +267,7 @@
             </div>
             <div class="detail-content">
             
-              <div class="api-resource-detail">
-                <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="apipath-2-get">
-                    <h1>
-                      <span class="api-item-title">Retire an API</span>
-                    </h1>
-                    <div class="resource-description api-item-description">
-                      Retires an API from the gateway, effectively removing it from the system and making it impossible
-                      to invoke.
-                    </div>
-
-                    <div class="section query-parameters-section">
-                      <div class="section-header">
-                        <a data-toggle="collapse" data-target="#parameters-section-body">
-                          <span class="section-label">QUERY PARAMETERS</span>
-                        </a>
-                        <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
-                      </div>
-                      <div class="section-body collapse in" id="parameters-section-body">
-                        <div class="alert alert-info">
-                          <span class="pficon pficon-info"></span>
-                          <strong>No query parameters have been declared.</strong>
-                          <button class="btn btn-primary btn-sm pull-right">Add Query Parameter</button>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    <div class="section responses-section">
-                      <div class="section-header">
-                        <a data-toggle="collapse" data-target="#responses-section-body">
-                          <span class="section-label">RESPONSES</span>
-                        </a>
-                        <button class="btn btn-sm btn-default pull-right"><span class="fa fa-plus"></span></button>
-                      </div>
-                      <div class="section-body collapse in" id="responses-section-body">
-                        <table class="table table-striped api-resource-responses">
-                          <tr>
-                            <th>Status Code</th>
-                            <th>Description</th>
-                            <th>Type</th>
-                          </tr>
-                          <tr>
-                            <td class="parameter">204 No Content</td>
-                            <td class="description">Indicates that the API was successfully retired (deleted).</td>
-                            <td class="type"></td>
-                          </tr>
-                        </table>
-                      </div>
-                    </div>
-                    
-                  </div>
-                </div>
-              </div>
+              <h1>To be done!</h1>
             
             </div>
           </div>
