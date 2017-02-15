@@ -55,7 +55,7 @@
     <div class="container-fluid">
       <div class="row" style="background-color: white">
         <div class="col-md-5" style="padding-bottom: 10px">
-          <h1>Create a New API</h1>
+          <h1>Add an Existing API</h1>
         </div>
       </div>
       <div class="row" style="padding: 15px">
@@ -64,68 +64,51 @@
         <div class="col-md-3" style="font-size: 15px; padding-top: 10px">
           <div class="alert alert-info">
             <span class="pficon pficon-info"></span>
-            <strong>What does this page do?</strong>
+            <strong>What is this page?</strong>
             <p style="line-height: 18px">
-              Here you can create a brand new API by telling us the name (and description) of the new API
-              and indicating where you want us to store it (GitHub repository location).
+              Here you can add an existing API to the Studio by telling us where the API's OpenAPI document is
+              located.  Simply provide the GitHub URL of your OpenAPI document and we'll do the rest!
             </p>
           </div>
-          <ol>
-            <li>Choose a name (<b>Required</b>)</li>
-            <li>Set the description</li>
-            <li>Configure GitHub repository details (<b>Required</b>)</li>
-          </ol>
         </div>
         <div class="col-md-7">
+
+          <div class="alert alert-info">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true" title="OK, I got it!">
+              <span class="pficon pficon-close"></span>
+            </button>
+            <span class="pficon pficon-info"></span>
+            <strong>What do I do?</strong>
+            <p style="line-height: 18px">
+              Simply copy/paste (<strong>or drag and drop!</strong>) the GitHub URL of your existing OpenAPI document
+              from your browser into the form and then click "Add API".  Easy peasy, lemon squeezy!
+            </p>
+          </div>
 
           <div class="panel panel-default">
             <div class="panel-body" style="padding-top: 25px">
               <form class="form-horizontal">
+                <div>&nbsp;</div>
                 <div class="form-group">
-                  <label class="col-sm-2 control-label" for="api-name">Name</label>
+                  <label class="col-sm-2 control-label" for="api-repository-url">GitHub URL</label>
                   <div class="col-sm-10">
-                    <input type="text" id="api-name" class="form-control" placeholder="Enter the API's name">
+                    <input type="text" id="api-repository-url" class="form-control" placeholder="Specify a URL to an OpenAPI document stored in GitHub">
                   </div>
                 </div>
+
                 <div class="form-group">
-                  <label class="col-sm-2 control-label" for="api-description">Description</label>
+                  <label class="col-sm-2 control-label" for="api-repository-url-error"></label>
                   <div class="col-sm-10">
-                    <textarea id="api-description" class="form-control" placeholder="Type a short description of the API"></textarea>
+                    <div class="alert alert-danger" id="api-repository-url-error">
+                      <span class="pficon pficon-error-circle-o"></span>
+                      <strong>Hey there is a problem!</strong> Yeah this is really messed up and you should <a href="#" class="alert-link">know about it</a>.
+                    </div>
                   </div>
                 </div>
-                <hr/>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="api-organization">Organization</label>
-                  <div class="col-sm-10">
-                    <select id="api-organization" class="selectpicker">
-                      <option>3scale</option>
-                      <option>apiman</option>
-                      <option>TomBrady</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="api-repository">Repository</label>
-                  <div class="col-sm-10">
-                    <select id="api-repository" class="selectpicker">
-                      <option>apicast</option>
-                      <option>apicast-xc</option>
-                      <option>backend</option>
-                      <option>deploy</option>
-                      <option>system</option>
-                    </select>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label class="col-sm-2 control-label" for="api-repository-resource">Resource</label>
-                  <div class="col-sm-10">
-                    <input type="text" id="api-repository-resource" class="form-control" placeholder="Enter the path to a resource within the repository">
-                  </div>
-                </div>
-                <hr/>
+
                 <div class="form-group">
                   <div class="col-sm-offset-2 col-sm-10">
-                    <a href="api-details.html" class="btn btn-primary">Create API</a>
+                    <a href="api-details.html" class="btn btn-primary">Add API</a>
                   </div>
                 </div>
               </form>
